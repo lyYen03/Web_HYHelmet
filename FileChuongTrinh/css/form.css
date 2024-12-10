@@ -1,0 +1,94 @@
+/* Định dạng chung cho container */
+
+.container.mt-5 {
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+
+/* Tiêu đề chính */
+
+h1.text-primary {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+/* Đoạn thông báo phía dưới tiêu đề */
+
+p.text-center {
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* Định dạng nhãn (label) của form */
+
+.form-group label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* Định dạng các input trong form */
+
+.form-control {
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #333;
+    outline: none;
+}
+
+
+/* Định dạng các nút submit */
+
+button[type="submit"] {
+    background-color: #000;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #333;
+}
+
+
+/* Định dạng thông báo lỗi */
+
+small.text-danger {
+    font-size: 12px;
+    color: #e63946;
+    margin-top: 5px;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+input:valid {
+    border-color: green;
+}

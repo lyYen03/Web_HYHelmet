@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu</title>
+    <link rel="icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- js -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/js.js"></script>
+</head>
+<style> 
+    .nav-link{
+        display: block;
+        padding: 0px;
+        font-size: 13px;
+    }
+    body {
+        background-color: #f8f9fa;
+    }
+    
+    .profile-container {
+        margin: 50px 0;
+    }
+    
+    .profile-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #fff;
+        transition: transform 0.2s;
+        margin: 20px;
+        /* Thêm khoảng cách giữa các khung */
+    }
+    
+    .profile-card:hover {
+        transform: scale(1.05);
+    }
+    
+    .profile-image {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+    
+    .profile-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    
+   
+    .profile-container {
+        margin: 50px auto;
+        max-width: 1200px;
+        background: linear-gradient(to right, #ffffff, #e9ecef);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .profile-card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .profile-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .profile-image {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 4px solid #007bff;
+        transition: border-color 0.3s;
+    }
+    
+    .profile-image:hover {
+        border-color: #0056b3;
+    }
+    
+    .profile-name {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 10px;
+    }
+    
+    .profile-info {
+        font-size: 1.1rem;
+        color: #495057;
+        margin: 5px 0;
+    }
+    
+    .profile-info strong {
+        color: #007bff;
+    }
+    
+    @media (max-width: 768px) {
+        .profile-card {
+            margin-bottom: 20px;
+        }
+    } 
+   
+</style>
+
+<body>
+
+    <div class="container-fuild">
+        <div class="fixed">
+            <!--  -->
+            <div class="container-fluid py-2" id="top-header">
+                <div class="row align-items-center">
+                    <!-- Date Display -->
+                    <div class="col-md-3 text-center text-md-start my-1">
+                        <i class="bi bi-calendar-event"></i>
+                        <span id="dateNow"></span>
+                    </div>
+
+                    <!-- Contact Links -->
+                    <div class="col-md-9 d-flex justify-content-end">
+                        <ul id="top-contact" class="list-inline mb-0">
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/thanh-vien.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-people"></i> Thành viên
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangky.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-pencil-square"></i> Đăng ký
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangnhap.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-box-arrow-in-right"></i> Đăng nhập
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/lienhe.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-info-circle"></i> Liên hệ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- end top header -->
+
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-xl navbar-dark sticky-top p-2" id="navbar-menu">
+                <!-- Brand and Logo -->
+                <a class="navbar-brand" href="../html/index.html">
+                    <img src="../img/icontrangchu/logo.jpg" alt="logo" style="width: 50px; border-radius: 10px;">
+                </a>
+                <a href="../html/index.html" class="navbar-brand font-weight-bold"> HY HELMET</a>
+
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars text-dark"></i>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="nav-menu-link">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../html/index.html"><i class="bi bi-house-door-fill"></i> TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/gioithieu.html"><i class="bi bi-info-circle"></i> GIỚI THIỆU</a>
+                        </li>
+
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-list"></i> SẢN PHẨM <i class="bi bi-caret-down-fill"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbardrop">
+                                <li><a class="dropdown-item" href="../html/sanpham.html">Tất cả sản phẩm</a></li>
+                                <li><a class="dropdown-item" href="../html/non_34.html">Mũ bảo hiểm 3/4 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/non_fullface.html">Mũ bảo hiểm Fullface</a></li>
+                                <li><a class="dropdown-item" href="../html/non_12.html">Mũ bảo hiểm 1/2 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/nonxedap.html">Mũ bảo hiểm Xe Đạp</a></li>
+                                <li><a class="dropdown-item" href="../html/kids.html">Mũ bảo hiểm trẻ em</a></li>
+                                <li><a class="dropdown-item" href="../html/phukien.html">Phụ Kiện</a></li>
+                                <li><a class="dropdown-item" href="../html/kinh.html">Kính</a></li>
+                                <li><a class="dropdown-item" href="../html/gangtay.html">Găng Tay</a></li>
+                                <li><a class="dropdown-item" href="../html/khac.html">Khác</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/khuyenmai.html"><i class="bi bi-tag-fill"></i> KHUYẾN MÃI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/blog.html"><i class="bi bi-chat-dots-fill"></i> BÀI VIẾT</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/sitemap.html"><i class="bi bi-map-fill"></i> SITE MAP</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tìm kiếm và tài khoản/gio hàng ở góc phải -->
+                    <div class="d-flex align-items-center ms-3">
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." />
+                            <button id="search-button" onclick="toggleSearchInput()">
+                                <img src="../img/icon/btsearch.png" alt="Search" />
+                            </button>
+                        </div>
+
+
+
+                        <div class="taiKhoan-gioHang ms-3">
+                            <a href="../html/thanhtoan.html" id="cart-icon" onmouseover="showCartItems()">
+                                <i style="font-size: 30px !important; color: white;" class="bi bi-cart-fill"></i>
+                                <span style="color: white;" id="cart-item-count" class="badge bg-warning rounded-circle">0</span>
+                            </a>
+                            <div id="cart-items-container" class="cart-items-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Navbar End -->
+
+        </div>
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../html/index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../html/gioithieu.html" class="text-dark">Giới thiệu</a></li>
+            </ol>
+        </nav>
+
+
+        <div class="container profile-container">
+            <h2 class="text-center mb-4">Giới Thiệu Đội Ngũ</h2>
+            <div class="row justify-content-center">
+                <!-- Người 1 -->
+                <div class="col-md-5 mb-4">
+                    <div class="profile-card">
+                        <img src="../img/icontrangchu/yenxinh.jpg" alt="Người 1" class="profile-image">
+                        <h3 class="profile-name">Lý Thị Yến</h3>
+                        <p class="profile-info"><strong>Mã sinh viên:</strong> 22665891</p>
+                        <p class="profile-info"><strong>Ngày tháng năm sinh:</strong> 31/12/2003</p>
+                        <p class="profile-info"><strong>Lớp:</strong> DHHTTT18B</p>
+                        <p class="profile-info"><strong>Giới tính:</strong> Nữ</p>
+                        <p class="profile-info"><strong>Năm học:</strong> 2024-2025</p>
+                        <p class="profile-info"><strong>Tên môn học:</strong> Hệ Thống và Công Nghệ Web(420300214501-DHHTTT18A)</p>
+                    </div>
+                </div>
+                <!-- Người 2 -->
+                <div class="col-md-5 mb-4">
+                    <div class="profile-card">
+                        <img src="../img/icontrangchu/hao.jpg" alt="Người 2" class="profile-image">
+                        <h3 class="profile-name">Hồ Nhựt Hào</h3>
+                        <p class="profile-info"><strong>Mã sinh viên:</strong> 22648221</p>
+                        <p class="profile-info"><strong>Ngày tháng năm sinh:</strong> 10/06/2004</p>
+                        <p class="profile-info"><strong>Lớp:</strong> DHHTTT18A</p>
+                        <p class="profile-info"><strong>Giới tính:</strong> Nam</p>
+                        <p class="profile-info"><strong>Năm học:</strong> 2024-2025</p>
+                        <p class="profile-info"><strong>Tên môn học:</strong> Hệ Thống và Công Nghệ Web(420300214501-DHHTTT18A)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+
+        <!-- Tạo modal đăng ký -->
+
+
+
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>LIÊN HỆ</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-geo-alt-fill"></i> Địa chỉ: Gò Vấp, TPHCM</li>
+                            <li><i class="bi bi-telephone-fill"></i> Số điện thoại: 0123456789</li>
+                            <li><i class="bi bi-envelope-fill"></i> Email: HYHelmet@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>CHÍNH SÁCH</h5>
+                        <ul>
+                            <li><a href="../html/index.html">Trang chủ</a></li>
+                            <li><a href="../html/gioithieu.html">Giới thiệu</a></li>
+                            <li><a href="../html/sanpham.html">Sản phẩm</a></li>
+                            <li><a href="../html/khuyenmai.html">Khuyến mãi</a></li>
+                            <li><a href="../html/blog.html">Bài viết</a></li>
+                            <li><a href="#">Site map</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                        <ul>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Điều khoản dịch vụ</a></li>
+                            <li><a href="#">Theo dõi đơn hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="cty-follow-us mb-3">
+                            <h5>TƯƠNG TÁC VỚI CHÚNG TÔI</h5>
+                            <ul id="bottom-social-media" class="font-size-large">
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-tiktok"></i></a></li>
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-youtube"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>PHƯƠNG THỨC THANH TOÁN</h5>
+                            <ul class="nav">
+                                <li class="mx-1"><img src="../img/img/payment_1_img.webp" alt="Payment Method 1"></li>
+                                <li class="mx-1"><img src="../img/img/payment_2_img.webp" alt="Payment Method 2"></li>
+                                <li class="mx-1"><img src="../img/img/payment_3_img.webp" alt="Payment Method 3"></li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>PHƯƠNG THỨC VẬN CHUYỂN</h5>
+                            <ul class="nav">
+                                <li class="mx-1"><img src="../img/img/shipment_1_img.webp" alt="Shipping Method 1"></li>
+                                <li class="mx-1"><img src="../img/img/shipment_2_img.webp" alt="Shipping Method 2"></li>
+                                <li class="mx-1"><img src="../img/img/shipment_3_img.webp" alt="Shipping Method 3"></li>
+                                <li class="mx-1"><img src="../img/img/shipment_4_img.webp" alt="Shipping Method 4"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p>&copy; Bản quyền thuộc về HY HELMET.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

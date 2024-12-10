@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link rel="icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- js -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+
+    <style>
+        .product-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .product-card img {
+            max-width: 100%;
+            height: 100px;
+        }
+        
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .product-list .col-md-4 {
+            flex: 1 1 calc(33.333% - 20px);
+            margin: 10px;
+        }
+        
+        .product-detail {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .image-gallery img {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+        /* Khung chứa hình ảnh */
+        
+        .slider-container {
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            width: 100%;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        
+        .image-container {
+            display: flex;
+            animation: gentleSlide 3s ease-in-out infinite;
+        }
+        
+        .image-container img {
+            width: 300px;
+            height: 200px;
+            margin: 0 10px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        /* Keyframes cho hiệu ứng rung nhẹ */
+        
+        @keyframes gentleSlide {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(0);
+            }
+            75% {
+                transform: translateX(10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 100%;" class="container-fuild">
+        <div class="fixed">
+            <!--  -->
+            <div class="container-fluid py-2" id="top-header">
+                <div class="row align-items-center">
+                    <!-- Date Display -->
+                    <div class="col-md-3 text-center text-md-start my-1">
+                        <i class="bi bi-calendar-event"></i>
+                        <span id="dateNow"></span>
+                    </div>
+
+                    <!-- Contact Links -->
+                    <div class="col-md-9 d-flex justify-content-end">
+                        <ul id="top-contact" class="list-inline mb-0">
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/thanh-vien.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-people"></i> Thành viên
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangky.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-pencil-square"></i> Đăng ký
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangnhap.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-box-arrow-in-right"></i> Đăng nhập
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/lienhe.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-info-circle"></i> Liên hệ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- end top header -->
+
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-xl navbar-dark sticky-top p-2" id="navbar-menu">
+                <!-- Brand and Logo -->
+                <a class="navbar-brand" href="../html/index.html">
+                    <img src="../img/icontrangchu/logo.jpg" alt="logo" style="width: 50px; border-radius: 10px;">
+                </a>
+                <a href="../html/index.html" class="navbar-brand font-weight-bold"> HY HELMET</a>
+
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars text-dark"></i>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="nav-menu-link">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../html/index.html"><i class="bi bi-house-door-fill"></i> TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/gioithieu.html"><i class="bi bi-info-circle"></i> GIỚI THIỆU</a>
+                        </li>
+
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-list"></i> SẢN PHẨM <i class="bi bi-caret-down-fill"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbardrop">
+                                <li><a class="dropdown-item" href="../html/sanpham.html">Tất cả sản phẩm</a></li>
+                                <li><a class="dropdown-item" href="../html/non_34.html">Mũ bảo hiểm 3/4 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/non_fullface.html">Mũ bảo hiểm Fullface</a></li>
+                                <li><a class="dropdown-item" href="../html/non_12.html">Mũ bảo hiểm 1/2 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/nonxedap.html">Mũ bảo hiểm Xe Đạp</a></li>
+                                <li><a class="dropdown-item" href="../html/kids.html">Mũ bảo hiểm trẻ em</a></li>
+                                <li><a class="dropdown-item" href="../html/phukien.html">Phụ Kiện</a></li>
+                                <li><a class="dropdown-item" href="../html/kinh.html">Kính</a></li>
+                                <li><a class="dropdown-item" href="../html/gangtay.html">Găng Tay</a></li>
+                                <li><a class="dropdown-item" href="../html/khac.html">Khác</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/khuyenmai.html"><i class="bi bi-tag-fill"></i> KHUYẾN MÃI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/blog.html"><i class="bi bi-chat-dots-fill"></i> BÀI VIẾT</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/sitemap.html"><i class="bi bi-map-fill"></i> SITE MAP</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tìm kiếm và tài khoản/gio hàng ở góc phải -->
+                    <div class="d-flex align-items-center ms-3">
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." />
+                            <button id="search-button" onclick="toggleSearchInput()">
+                                <img src="../img/icon/btsearch.png" alt="Search" />
+                            </button>
+                        </div>
+
+
+
+                        <div class="taiKhoan-gioHang ms-3">
+                            <a href="../html/thanhtoan.html" id="cart-icon" onmouseover="showCartItems()">
+                                <i style="font-size: 30px !important; color: white;" class="bi bi-cart-fill"></i>
+                                <span style="color: white;" id="cart-item-count" class="badge bg-warning rounded-circle">0</span>
+                            </a>
+                            <div id="cart-items-container" class="cart-items-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Navbar End -->
+
+        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../html/index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../html/allsp.html" class="text-dark">Sản phẩm</a></li>
+            </ol>
+        </nav>
+
+        <div class="container hangSanXuat">
+            <h6 class="timkiem">Danh mục:</h6>
+            <ul class="d-flex">
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/non_34.html" onclick="displayProductsByBrand('Nón 3/4')">
+                            <img src="../img/iconsp/1.jpg" alt="">
+                            <span class="category-name">Nón 3/4</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/non_fullface.html" onclick="displayProductsByBrand('Nón FullFace')">
+                            <img src="../img/iconsp/2.jpg" alt="">
+                            <span class="category-name">Nón FullFace</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/non_12.html" onclick="displayProductsByBrand('Nón Nửa đầu')">
+                            <img src="../img/iconsp/3.jpg" alt="">
+                            <span class="category-name">Nón Nửa đầu</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/phukien.html" onclick="displayProductsByBrand('Phụ Kiện')">
+                            <img src="../img/iconsp/4.jpg" alt="">
+                            <span class="category-name">Phụ Kiện</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/kids.html" onclick="displayProductsByBrand('Trẻ em')">
+                            <img src="../img/iconsp/5.jpg" alt="">
+                            <span class="category-name">Trẻ em</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/nonxedap.html" onclick="displayProductsByBrand('Xe đạp')">
+                            <img src="../img/iconsp/6.jpg" alt="">
+                            <span class="category-name">Xe đạp</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Title and Product Image -->
+        <div class="container product-list mt-5" id="product-list">
+            <!-- Danh sách sản phẩm sẽ được hiển thị ở đây -->
+        </div>
+
+        <!-- Product Detail -->
+        <div class="product-detail" id="product-detail" style="display: none;">
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="detail-image" src="" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h3 id="detail-title"></h3>
+                    <p id="detail-price"></p>
+                    <p id="detail-description"></p>
+                    <button class="btn btn-secondary" onclick="hideDetail()">Trở lại</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="product-details-container"></div>
+        <!-- Container for the detailed view -->
+        <!--  -->
+        <div class="slider-container">
+            <div class="image-container">
+                <img src="../img/icontrangchu/sk1.webp" alt="Hình 1">
+                <img src="../img/icontrangchu/sk2.webp" alt="Hình 2">
+                <img src="../img/icontrangchu/sk3.webp" alt="Hình 3">
+                <img src="../img/icontrangchu/sk4.webp" alt="Hình 4">
+            </div>
+            <!--  -->
+        </div>
+
+    </div>
+    <!--  -->
+
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>LIÊN HỆ</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt-fill"></i> Địa chỉ: Gò Vấp, TPHCM</li>
+                        <li><i class="bi bi-telephone-fill"></i> Số điện thoại: 0123456789</li>
+                        <li><i class="bi bi-envelope-fill"></i> Email: HYHelmet@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>CHÍNH SÁCH</h5>
+                    <ul>
+                        <li><a href="../html/index.html">Trang chủ</a></li>
+                        <li><a href="../html/gioithieu.html">Giới thiệu</a></li>
+                        <li><a href="../html/sanpham.html">Sản phẩm</a></li>
+                        <li><a href="../html/khuyenmai.html">Khuyến mãi</a></li>
+                        <li><a href="../html/blog.html">Bài viết</a></li>
+                        <li><a href="#">Site map</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                        <li><a href="#">Theo dõi đơn hàng</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="cty-follow-us mb-3">
+                        <h5>TƯƠNG TÁC VỚI CHÚNG TÔI</h5>
+                        <ul id="bottom-social-media" class="font-size-large">
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-facebook"></i></a></li>
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-tiktok"></i></a></li>
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-youtube"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5>PHƯƠNG THỨC THANH TOÁN</h5>
+                        <ul class="nav">
+                            <li class="mx-1"><img src="../img/img/payment_1_img.webp" alt="Payment Method 1"></li>
+                            <li class="mx-1"><img src="../img/img/payment_2_img.webp" alt="Payment Method 2"></li>
+                            <li class="mx-1"><img src="../img/img/payment_3_img.webp" alt="Payment Method 3"></li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5>PHƯƠNG THỨC VẬN CHUYỂN</h5>
+                        <ul class="nav">
+                            <li class="mx-1"><img src="../img/img/shipment_1_img.webp" alt="Shipping Method 1"></li>
+                            <li class="mx-1"><img src="../img/img/shipment_2_img.webp" alt="Shipping Method 2"></li>
+                            <li class="mx-1"><img src="../img/img/shipment_3_img.webp" alt="Shipping Method 3"></li>
+                            <li class="mx-1"><img src="../img/img/shipment_4_img.webp" alt="Shipping Method 4"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>&copy; Bản quyền thuộc về HY HELMET.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample product data (can be replaced with your actual product arrays)
+        const non_34 = [{
+            id: 1,
+            title: "ROYCE XH15 Trắng Bóng",
+            price_sale: "500,000đ",
+            price: "600,000đ",
+            img: "../img/Nón34/1.jpg",
+            images: ["../img/Nón34/1.jpg"], // Multiple images
+            description: "ROYCE XH15 Trắng Bóng, phong cách mạnh mẽ.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 950 gram.",
+            size: "	L, XL",
+            color: "Đen, trắng, xanh,..",
+            brand: "Royce"
+        }, {
+            id: 2,
+            title: "ROYCE XH15 Đen Nhám",
+            price_sale: "520,000đ",
+            price: "620,000đ",
+            img: "../img/Nón34/2.jpg",
+            images: ["../img/Nón34/2.jpg"],
+            description: "ROYCE XH15 Đen Nhám, thanh lịch và sang trọng.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 950 gram",
+            size: "L, XL",
+            color: "Đen, trắng, xanh,..",
+            brand: "Royce"
+        }, {
+            id: 3,
+            title: "Royce XH26 V3 Nhám",
+            price_sale: "550,000đ",
+            price: "650,000đ",
+            img: "../img/Nón34/3.jpg",
+            images: ["../img/Nón34/3.jpg"],
+            description: "Royce XH26 V3 Nhám, nổi bật và ấn tượng.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 950 gram.",
+            size: "	M, L, XL",
+            color: "Đen, trắng, xanh, đỏ, hồng,..",
+            brand: "Royce"
+        }, {
+            id: 4,
+            title: "Royce XH26 V6 Nhám",
+            price_sale: "570,000đ",
+            price: "720,000đ",
+            img: "../img/Nón34/4.jpg",
+            images: ["../img/Nón34/4.jpg"],
+            description: "Royce XH26 V6 Nhám, thời trang và hiện đại.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 950 gram.",
+            size: "M, L, XL",
+            color: "Đen, trắng, xanh, đỏ, hồng,..",
+            brand: "Royce"
+        }, {
+            id: 5,
+            title: "Royce XH26 Trắng Bóng",
+            price_sale: "540,000đ",
+            price: "700,000đ",
+            img: "../img/Nón34/5.jpg",
+            images: ["../img/Nón34/5.jpg"],
+            description: "Royce XH26 Trắng Bóng, trẻ trung và cá tính.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 950 gram.",
+            size: "	M, L, XL",
+            color: "Đen, trắng, xanh, đỏ, hồng,..",
+            brand: "Royce"
+        }, {
+            id: 6,
+            title: "Royce XH26 Đen nhám",
+            price_sale: "560,000đ",
+            price: "700,000đ",
+            img: "../img/Nón34/6.jpg",
+            images: ["../img/Nón34/6.jpg"],
+            description: "Royce XH26 Đen nhám, dịu dàng và thanh lịch.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 950 gram.",
+            size: "	M, L, XL",
+            color: "Đen, trắng, xanh, đỏ, hồng",
+            brand: "Royce"
+        }, {
+            id: 7,
+            title: "Royal M139 Vàng Bóng",
+            price_sale: "600,000đ",
+            price: "700,000đ",
+            img: "../img/Nón34/8.jpg",
+            images: ["../img/Nón34/8.jpg"],
+            description: "Royal M139 Vàng Bóng, sang trọng và nổi bật.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 950 gram",
+            size: "	M, L và XL.",
+            color: "Đen, trắng, xanh, đỏ, hồng,..",
+            brand: "Royal (Mẫu độc quyền)"
+        }, {
+            id: 8,
+            title: "Royal M139 Đen Bóng",
+            price_sale: "580,000đ",
+            price: "680,000đ",
+            img: "../img/Nón34/7.jpg",
+            images: ["../img/Nón34/7.jpg"],
+            description: "Royal M139 Đen Bóng, phong cách hiện đại.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 950 gram.",
+            size: "	M, L và XL.",
+            color: "Đen, trắng, xanh, đỏ, hồng,..",
+            brand: "Royal (Mẫu độc quyền)"
+        }, {
+            id: 9,
+            title: "Nón Balder Carbon Vân Dệt",
+            price_sale: " 1,920,000đ",
+            price: "2,400,000đ",
+            img: "../img/Nón34/9.jpg",
+            images: ["../img/Nón34/9.jpg"],
+            description: "Nón Balder Carbon Vân Dệt, sang trọng và nổi bật.",
+            material: "	Sợi carbon 100%",
+            weight: "Khoảng 600 gram.",
+            size: "	M, L và XL.",
+            color: "Đen, trắng, xanh, đỏ, hồng,..",
+            brand: "Balder"
+        }];
+
+        const non_12 = [{
+            id: 10,
+            title: "Royal M239 Đen Bóng",
+            price_sale: "500,000đ",
+            price: "600,000đ",
+            img: "../img/non_12/1.jpg",
+            images: ["../img/non_12/1.jpg"], // Multiple images
+            description: "Royal M239 Đen Bóng, phong cách mạnh mẽ.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 715 gram.",
+            size: "	M, L, XL và XXL",
+            color: "Đen, trắng, vàng,..",
+            brand: "Royal "
+        }, {
+            id: 11,
+            title: "Royal M239 Xám Xi Măng",
+            price_sale: "520,000đ",
+            price: "620,000đ",
+            img: "../img/non_12/2.jpg",
+            images: ["../img/non_12/2.jpg"],
+            description: "Royal M239 Xám Xi Măng, thanh lịch và sang trọng.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 715 gram.",
+            size: "M, L, XL và XXL",
+            color: "Trắng sữa",
+            brand: "Royal "
+        }, {
+            id: 12,
+            title: "Royal M239 Trắng Bóng",
+            price_sale: "550,000đ",
+            price: "650,000đ",
+            img: "../img/non_12/3.jpg",
+            images: ["../img/non_12/3.jpg"],
+            description: "Royal M239 Trắng Bóng, nổi bật và ấn tượng.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 715 gram.",
+            size: "	M, L, XL và XXL",
+            color: "Đen, trắng, vàng,..",
+            brand: "Royal"
+        }, {
+            id: 13,
+            title: "Royal M239 Đen Nhám",
+            price_sale: "540,000đ",
+            price: "640,000đ",
+            img: "../img/non_12/4.jpg",
+            images: ["../img/non_12/4.jpg"],
+            description: "Royal M239 Đen Nhám, phong cách cá tính.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 715 gram.",
+            size: "M, L, XL và XXL",
+            color: "Đen, trắng, vàng,..",
+            brand: "Royal "
+        }, {
+            id: 14,
+            title: "Royal M666 Xi Măng Viền Caro",
+            price_sale: "510,000đ",
+            price: "610,000đ",
+            img: "../img/non_12/5.jpg",
+            images: ["../img/non_12/5.jpg"],
+            description: "Royal M666 Xi Măng Viền Caro, nổi bật và thu hút.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 520 gram.",
+            size: "	Freesize (Vòng đầu 54 – 59cm)",
+            color: "Đen, xám,…",
+            brand: "Royal "
+        }, {
+            id: 15,
+            title: "Royal M666 Đen Nhám Viền Caro",
+            price_sale: "530,000đ",
+            price: "630,000đ",
+            img: "../img/non_12/6.jpg",
+            images: ["../img/non_12/6.jpg"],
+            description: "Royal M666 Đen Nhám Viền Caro, phong cách trẻ trung.",
+            material: "Nhựa Polycarbonate",
+            weight: "Khoảng 520 gram",
+            size: "Freesize (Vòng đầu 54 – 59cm)",
+            color: "Đen, xám,…",
+            brand: "Royal "
+        }, {
+            id: 16,
+            title: "Rona Bosozoku Đen Bóng Viền Caro",
+            price_sale: "550,000đ",
+            price: "650,000đ",
+            img: "../img/non_12/7.jpg",
+            images: ["../img/non_12/7.jpg"],
+            description: "Rona Bosozoku Đen Bóng Viền Caro, an toàn và thời trang.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 520 gram.",
+            size: "Freesize (Vòng đầu 54 – 59cm)",
+            color: "Đen, trắng, xám, vàng,…",
+            brand: "Royal "
+        }, {
+            id: 17,
+            title: "Napoli N120 Retro Đen Nhám",
+            price_sale: "560,000đ",
+            price: "660,000đ",
+            img: "../img/non_12/8.jpg",
+            images: ["../img/non_12/8.jpg"],
+            description: "Napoli N120 Retro Đen Nhám, phong cách thanh lịch.",
+            material: "Nhựa Polycarbonate",
+            weight: "Khoảng 520 gram.",
+            size: "Freesize (Vòng đầu 56-59 cm)",
+            color: "Đen, trắng, xám, vàng,…",
+            brand: "Napoli"
+        }, {
+            id: 18,
+            title: "Napoli N120 Bosozoku Hồng",
+            price_sale: "560,000đ",
+            price: "660,000đ",
+            img: "../img/non_12/9.jpg",
+            images: ["../img/non_12/9.jpg"],
+            description: "Napoli N120 Bosozoku Hồng, phong cách thanh lịch.",
+            material: "Nhựa Polycarbonate",
+            weight: "Khoảng 520 gram.",
+            size: "Freesize (Vòng đầu 56-59 cm)",
+            color: "Đen, trắng, xám, vàng,…",
+            brand: "Napoli"
+        }, ];
+
+        const non_fullface = [
+
+            {
+                id: 19,
+                title: "FULLFACE LS2 FF353 ĐEN CAM XƯỚC",
+                price_sale: "1,500,000đ",
+                price: "1,700,000đ",
+                img: "../img/mbh_fullface/full01.jpg",
+                images: ["../img/mbh_fullface/full01.jpg"],
+                description: "FULLFACE LS2 FF353 ĐEN CAM XƯỚC, phong cách mạnh mẽ.",
+                material: "nhựa ABS nguyên sinh",
+                weight: "1050g ± 50g",
+                size: " M: 53 -54cm - Size L: 55 - 57cm - size XL: 57 - 59cm",
+                color: "Cam, Đen",
+                brand: "ROYAL"
+            }, {
+                id: 20,
+                title: "FULLFACE ROYAL M136 DESIGN",
+                price_sale: "550,000đ",
+                price: "650,000đ",
+                img: "../img/mbh_fullface/full02.jpg",
+                images: ["../img/mbh_fullface/full02.jpg"],
+                description: "FULLFACE ROYAL M136 DESIGN, cá tính.",
+                material: "nhựa ABS nguyên sinh",
+                weight: "1050g ± 50g",
+                size: " M: 53 -54cm - Size L: 55 - 57cm - size XL: 57 - 59cm",
+                color: "Xanh Dương",
+                brand: "ROYAL"
+            }, {
+                id: 21,
+                title: "FULLFACE ROYAL M141K",
+                price_sale: "1,210,000₫",
+                price: "930,000đ",
+                img: "../img/mbh_fullface/full03.jpg",
+                images: ["../img/mbh_fullface/full03.jpg"],
+                description: "FULLFACE ROYAL M141K, nổi bật.",
+                material: "nhựa ABS nguyên sinh  ",
+                weight: "1200g ± 50g",
+                size: " M: 53 -54cm - Size L: 55 - 57cm - size XL: 57 - 59cm",
+                color: "Đen Bóng",
+                brand: "ROYAL"
+            }, {
+                id: 22,
+                title: "FULLFACE 2 KÍNH ROYAL M266 DESIGN",
+                price_sale: "760,000₫ ",
+                price: "620,000đ",
+                img: "../img/mbh_fullface/full04.jpg",
+                images: ["../img/mbh_fullface/full04.jpg"],
+                description: "FULLFACE 2 KÍNH ROYAL M266 DESIGN, sang trọng.",
+                material: "nhựa ABS nguyên sinh  ",
+                weight: "1232g ± 50g",
+                size: " M: 53 -54cm - Size L: 55 - 57cm - size XL: 57 - 59cm",
+                color: "V1 Đỏ Bóng",
+                brand: "ROYAL"
+            }, {
+                id: 23,
+                title: "FULLFACE ROYAL M138B",
+                price_sale: "760,000₫",
+                price: "640,000đ",
+                img: "../img/mbh_fullface/full05.jpg",
+                images: ["../img/mbh_fullface/full05.jpg"],
+                description: "FULLFACE ROYAL M138B, nổi bật và trẻ trung.",
+                material: "nhựa ABS nguyên sinh  ",
+                weight: "730g",
+                size: "M, size L: 56 - 57cm  - size XL: 58 - 59cm",
+                color: "Đen bóng",
+                brand: "ROYAL"
+            }, {
+                id: 24,
+                title: "FULLFACE 2 KÍNH ROYAL M266 DESIGN",
+                price_sale: "760,000₫đ",
+                price: "950,000đ",
+                img: "../img/mbh_fullface/full06.jpg",
+                images: ["../img/mbh_fullface/full06.jpg"],
+                description: "FULLFACE 2 KÍNH ROYAL M266 DESIGN, phù hợp cho những người năng động.",
+                material: "Nhựa ABS",
+                weight: "1232g ± 50g",
+                size: "Size M: 53 -54cm - Size L: 55 - 57cm - size XL: 57 - 59cm",
+                color: "V1 Biển Bóng",
+                brand: "ROYAL"
+            }, {
+                id: 25,
+                title: "Fullface KYT TT-Course Electron Yellow",
+                price_sale: "2,240,000đ",
+                price: "2,800,000đ",
+                img: "../img/mbh_fullface/full07.jpg",
+                images: ["../img/mbh_fullface/full07.jpg"],
+                description: "Fullface KYT TT-Course Electron Yellow, sang trọng và thanh lịch.",
+                material: "Nhựa dẻo ADT",
+                weight: "Khoảng 1550 gram",
+                size: "	M, L và XL",
+                color: "Đen, đỏ và tem..",
+                brand: "KYT (Malay)"
+            }, {
+                id: 26,
+                title: "Fullface KYT TT-Course Jaume",
+                price_sale: "2,240,000đ",
+                price: "2,800,000đ",
+                img: "../img/mbh_fullface/full08.jpg",
+                images: ["../img/mbh_fullface/full08.jpg"],
+                description: "Fullface KYT TT-Course Jaume, trẻ trung và năng động.",
+                material: "Nhựa ABS",
+                weight: "Khoảng 1550 gram",
+                size: "M, L và XL",
+                color: "Đen, đỏ và tem..",
+                brand: "KYT (Malay)"
+            }, {
+                id: 27,
+                title: "Nón ROC R05 V6 Xanh Lá",
+                price_sale: "880,000đ",
+                price: "880,000đ",
+                img: "../img/mbh_fullface/full09.jpg",
+                images: ["../img/mbh_fullface/full09.jpg"],
+                description: "Nón ROC R05 V6 Xanh Lá, mạnh mẽ và thể thao.",
+                material: "Nhựa ABS",
+                weight: "Khoảng 1350 gram.",
+                size: "	M, L, XL và XXL",
+                color: "Đen và tem..",
+                brand: "ROC"
+            }
+
+
+        ];
+        const nonxedap = [{
+            id: 28,
+            title: "NÓN XE ĐẠP POC 01 REDBULL",
+            price_sale: "500,000đ",
+            price: "600,000đ", // Giá dạng số để tính toán dễ dàng
+            img: "../img/mbh_xedap/muxedap01.jpg",
+            images: ["../img/mbh_xedap/muxedap01.jpg"],
+            description: "NÓN XE ĐẠP POC 01 REDBULL, phong cách mạnh mẽ.",
+            material: "Nhựa ABS",
+            weight: "~285 Gram",
+            size: "	Freesize: 56-62cm",
+            color: "Poc Xanh Nhạt",
+            brand: "POC"
+        }, {
+            id: 29,
+            title: "NÓN XE ĐẠP ROYAL MD16 XÁM TỔ ONG",
+            price_sale: "450,000đ",
+            price: "550,000đ",
+            img: "../img/mbh_xedap/muxedap02.jpg",
+            images: ["../img/mbh_xedap/muxedap02.jpg"],
+            description: "NÓN XE ĐẠP ROYAL MD16 XÁM TỔ ONG, phong cách trẻ trung.",
+            material: "Nhựa ABS",
+            weight: " ~275gr",
+            size: "L",
+            color: "Xám",
+            brand: "Royal"
+        }, {
+            id: 30,
+            title: "Royal M152k Đen mờ",
+            price_sale: "470,000đ",
+            price: "570,000đ",
+            img: "../img/mbh_xedap/muxedap03.jpg",
+            images: ["../img/mbh_xedap/muxedap03.jpg"],
+            description: "Royal M152k Đen mờ, phong cách thanh lịch.",
+            material: "Nhựa ABS",
+            weight: "700g",
+            size: "S",
+            color: "Đen mờ",
+            brand: "Royal"
+        }, {
+            id: 31,
+            title: "NÓN XE ĐẠP POC 03 ĐEN DẠ QUANG",
+            price_sale: "520,000đ",
+            price: "620,000đ",
+            img: "../img/mbh_xedap/muxedap04.jpg",
+            images: ["../img/mbh_xedap/muxedap04.jpg"],
+            description: "NÓN XE ĐẠP POC 03 ĐEN DẠ QUANG, phong cách cá tính.",
+            material: "Nhựa ABS",
+            weight: "750g",
+            size: "XL",
+            color: "Đen dạ quang",
+            brand: "Poc"
+        }, {
+            id: 32,
+            title: "Nón POC P08 Vàng Đen",
+            price_sale: "980,000đ",
+            price: "1,480,000đ",
+            img: "../img/mbh_xedap/muxedap05.jpg",
+            images: ["../img/mbh_xedap/muxedap05.jpg"],
+            description: "Nón POC P08 Vàng Đen, phong cách độc đáo.",
+            material: " Vỏ PC cao cấp, mút EPS dày hấp thu xung động.",
+            weight: "700g",
+            size: "M",
+            color: "Vàng đen",
+            brand: "Poc"
+        }, {
+            id: 33,
+            title: "NÓN XE ĐẠP POC HỒNG",
+            price_sale: "510,000đ",
+            price: "610,000đ",
+            img: "../img/mbh_xedap/muxedap06.jpg",
+            images: ["../img/mbh_xedap/muxedap06.jpg"],
+            description: "NÓN XE ĐẠP POC HỒNG, phong cách năng động.",
+            material: "Nhựa ABS",
+            weight: "285 Gram",
+            size: "L",
+            color: "Hồng",
+            brand: "POC"
+        }, {
+            id: 34,
+            title: "Nón POC 07 Đỏ đen",
+            price_sale: "495,000đ",
+            price: "595,000đ",
+            img: "../img/mbh_xedap/muxedap07.jpg",
+            images: ["../img/mbh_xedap/muxedap07.jpg"],
+            description: "Nón POC 07 Đỏ đen, phong cách mạnh mẽ.",
+            material: "Nhựa ABS",
+            weight: "700g",
+            size: "S",
+            color: "Đỏ đen",
+            brand: "Poc"
+        }, {
+            id: 35,
+            title: "Royal MD-15 Xám",
+            price_sale: "460,000đ",
+            price: "560,000đ",
+            img: "../img/mbh_xedap/muxedap08.jpg",
+            images: ["../img/mbh_xedap/muxedap08.jpg"],
+            description: "Royal MD-15 Xám, phong cách thanh lịch.",
+            material: "Nhựa ABS",
+            weight: "650g",
+            size: "M",
+            color: "Xám",
+            brand: "Royal"
+        }, {
+            id: 36,
+            title: "POC FALCON F05 HỒNG PHẤN",
+            price_sale: "475,000đ",
+            price: "575,000đ",
+            img: "../img/mbh_xedap/muxedap09.jpg",
+            images: ["../img/mbh_xedap/muxedap09.jpg"],
+            description: "POC FALCON F05 HỒNG PHẤN, phong cách thời thượng.",
+            material: "Nhựa ABS",
+            weight: "720g",
+            size: "L",
+            color: "Hồng Phấn",
+            brand: "POC"
+        }];
+        const phukien = [{
+            id: 37,
+            title: "Bông Hoa Phụ Kiện Trang Trí Nón Bảo Hiểm Màu Hồng",
+            price_sale: "150,000đ",
+            price: "350,000đ",
+            img: "../img/phukien/1.jpg",
+            images: ["../img/phukien/1.jpg"],
+            description: "Bông Hoa Phụ Kiện Trang Trí Nón Bảo Hiểm Màu Hồng, phong cách dễ thương.",
+            material: " Nhựa PP",
+            weight: "15g",
+            size: "M",
+            color: " Đa dạng như hồng, trắng, đen, xanh,…",
+            brand: "Poc"
+        }, {
+            id: 38,
+            title: "Set Charm Phụ Kiện Trang Trí Nón Bubu Cute",
+            price_sale: "150,000đ",
+            price: "250,000đ",
+            img: "../img/phukien/2.jpg",
+            images: ["../img/phukien/2.jpg"],
+            description: "Set Charm Phụ Kiện Trang Trí Nón Bubu Cute, phong cách trẻ trung.",
+            material: "Nhựa dẻo 2D",
+            weight: "2g",
+            size: "S",
+            color: "Đa dạng theo chủ đề: Hoạt hình, động vật, thực vật, xe ô tô,…",
+            brand: "Poc"
+        }, {
+            id: 39,
+            title: "Kính Bubble Nửa Mặt GRS Gắn Nón 3/4 Và Nón 1/2",
+            price_sale: "470,000đ",
+            price: "570,000đ",
+            img: "../img/phukien/3.jpg",
+            images: ["../img/phukien/3.jpg"],
+            description: "Kính Bubble Nửa Mặt GRS Gắn Nón 3/4 Và Nón 1/2, phong cách thanh lịch.",
+            material: "Polycarbonate",
+            weight: "20g",
+            size: " Gắn được hầu hết tất cả các loại mũ 3/4 và mũ nữa đầu có cúc bấm",
+            color: "Trong",
+            brand: " GRS"
+        }, {
+            id: 40,
+            title: "Găng Tay Probiker Cụt",
+            price_sale: "320,000đ",
+            price: "420,000đ",
+            img: "../img/phukien/4.jpg",
+            images: ["../img/phukien/4.jpg"],
+            description: "Găng Tay Probiker Cụt, phong cách cá tính.",
+            material: "Chất liệu kaki thoáng khí.",
+            weight: "Khoảng 222 gram.",
+            size: "	L và XL",
+            color: "Đen",
+            brand: "Probiker"
+        }, {
+            id: 41,
+            title: "Găng tay 5.11 Cụt Xanh Camo",
+            price_sale: "280,000đ",
+            price: "480,000đ",
+            img: "../img/phukien/5.jpg",
+            images: ["../img/phukien/5.jpg"],
+            description: "Găng tay 5.11 Cụt Xanh Camo, phong cách độc đáo.",
+            material: "Chất liệu kaki thoáng khí.",
+            weight: "Khoảng 222 gram.",
+            size: "	Freesize",
+            color: "Đen đen đỏ, đen cam,..",
+            brand: "5.11"
+        }, {
+            id: 42,
+            title: "Mắt ếch vàng",
+            price_sale: "110,000đ",
+            price: "210,000đ",
+            img: "../img/phukien/6.jpg",
+            images: ["../img/phukien/6.jpg"],
+            description: "Mắt ếch vàng, phong cách năng động.",
+            material: "Nhựa",
+            weight: "Khoảng 10 gram.",
+            size: "0",
+            color: "Hồng, đỏ, đen, vàng, xanh",
+            brand: "không"
+        }, ];
+
+        const kinh = [{
+            id: 43,
+            title: "KÍNH PHI CÔNG GOGGLES BLACK",
+            price_sale: "200,000đ",
+            price: "250,000đ",
+            img: "../img/mbh_kinh/kinh01.jpg",
+            images: ["../img/mbh_kinh/kinh01.jpg"],
+            description: "KÍNH PHI CÔNG GOGGLES BLACK, chống chói và chống bụi hiệu quả.",
+            material: "Polycarbonate",
+            weight: "150g",
+            size: "Free Size",
+            color: "Đen",
+            brand: "Hãng Poc"
+        }, {
+            id: 44,
+            title: "KÍNH PHI CÔNG GOGGLES BLACK Vàng ",
+            price_sale: "210,000đ",
+            price: "260,000đ",
+            img: "../img/mbh_kinh/kinh02.jpg",
+            images: ["../img/mbh_kinh/kinh02.jpg"],
+            description: "KÍNH PHI CÔNG GOGGLES BLACK Vàng, phong cách cá tính, phù hợp đi phượt.",
+            material: "Polycarbonate",
+            weight: "160g",
+            size: "Free Size",
+            color: "Đen vàng",
+            brand: "Hãng Poc"
+        }, {
+            id: 45,
+            title: "Kính SOL Bubble Khói",
+            price_sale: "220,000đ",
+            price: "270,000đ",
+            img: "../img/mbh_kinh/kinh03.jpg",
+            images: ["../img/mbh_kinh/kinh03.jpg"],
+            description: "Kính SOL Bubble Khói, phù hợp cho mọi loại mũ bảo hiểm.",
+            material: "Polycarbonate",
+            weight: "150g",
+            size: "Free Size",
+            color: "7 màu, trà, trong và gương",
+            brand: "SOL"
+        }, {
+            id: 46,
+            title: "Kính SOL Shield Trong",
+            price_sale: "230,000đ",
+            price: "280,000đ",
+            img: "../img/mbh_kinh/kinh04.jpg",
+            images: ["../img/mbh_kinh/kinh04.jpg"],
+            description: "Kính SOL Shield Trong, thiết kế ôm sát giúp chống bụi tốt.",
+            material: "Polycarbonate",
+            weight: "155g",
+            size: "Free Size",
+            color: "Vàng, trà, trong và gương",
+            brand: "SOL"
+        }, {
+            id: 47,
+            title: "KÍNH THAY THẾ ROYAL XH01 – M268",
+            price_sale: "240,000đ",
+            price: "290,000đ",
+            img: "../img/mbh_kinh/kinh05.jpg",
+            images: ["../img/mbh_kinh/kinh05.jpg"],
+            description: "KÍNH THAY THẾ ROYAL XH01 – M268, giúp tăng cường tầm nhìn vào ban đêm.",
+            material: "Polycarbonat Phủ Nano",
+            weight: "150g",
+            size: "Free Size",
+            color: "Trong",
+            brand: "Royal"
+        }, {
+            id: 48,
+            title: "KÍNH MSD FLAT KHÓI",
+            price_sale: "225,000đ",
+            price: "275,000đ",
+            img: "../img/mbh_kinh/kinh06.jpg",
+            images: ["../img/mbh_kinh/kinh06.jpg"],
+            description: "KÍNH MSD FLAT KHÓI, nổi bật và phong cách.",
+            material: "Polycarbonate cực bền và dẻo",
+            weight: "150g",
+            size: "Free Size",
+            color: "Khối",
+            brand: "MSD"
+        }, ];
+
+        const gangtay = [{
+                id: 49,
+                title: "Găng Tay Probiker Cụt",
+                price_sale: "500,000đ",
+                price: "600,000đ",
+                img: "../img/Gangtay/1.jpg",
+                images: ["../img/Gangtay/1.jpg"], // Multiple images
+                description: "Găng Tay Probiker Cụt, phong cách mạnh mẽ.",
+                material: "	Chất liệu kaki thoáng khí.",
+                weight: "	Khoảng 222 gram.",
+                size: "M",
+                color: "Đen",
+                brand: "Probiker"
+            }, {
+                id: 50,
+                title: "Găng tay Probiker Dài",
+                price_sale: "520,000đ",
+                price: "620,000đ",
+                img: "../img/Gangtay/2.jpg",
+                images: ["../img/Gangtay/2.jpg"],
+                description: "Găng tay Probiker Dài, thanh lịch và sang trọng.",
+                material: "	Chất liệu kaki thoáng khí.",
+                weight: "Khoảng 222 gram.",
+                size: "L",
+                color: "Đen đen xanh,.",
+                brand: "Probiker"
+            }, {
+                id: 51,
+                title: "Găng tay 5.11 Cụt màu đen",
+                price_sale: "550,000đ",
+                price: "650,000đ",
+                img: "../img/Gangtay/3.jpg",
+                images: ["../img/Gangtay/3.jpg"],
+                description: "Găng tay 5.11 Cụt màu đen, nổi bật và ấn tượng.",
+                material: "	Chất liệu kaki thoáng khí.",
+                weight: "Khoảng 222 gram.",
+                size: "M",
+                color: "Đen đen đỏ, đen cam,..",
+                brand: "5.11"
+            }, {
+                id: 52,
+                title: "GĂNG TAY MECHANIX MPACT DÀI ĐEN",
+                price_sale: "530,000đ",
+                price: "630,000đ",
+                img: "../img/Gangtay/4.webp",
+                images: ["../img/Gangtay/4.webp"],
+                description: "GĂNG TAY MECHANIX MPACT DÀI ĐEN, thời trang và hiện đại.",
+                material: "nhựa PU, da lộn và cotton",
+                weight: "Khoảng 222 gram.",
+                size: "S",
+                color: "Đen, Đen Vàng, Đen Đỏ",
+                brand: "Mechanix Mpact"
+            }, {
+                id: 53,
+                title: "GĂNG TAY MECHANIX MPACT ĐEN VÀNG",
+                price_sale: "540,000đ",
+                price: "640,000đ",
+                img: "../img/Gangtay/5.webp",
+                images: ["../img/Gangtay/5.webp"],
+                description: "GĂNG TAY MECHANIX MPACT DÀI ĐEN VÀNG, trẻ trung và cá tính.",
+                material: "nhựa PU, da lộn và cotton",
+                weight: "Khoảng 222 gram.",
+                size: "M",
+                color: "Đen, Đen Vàng, Đen Đỏ",
+                brand: "Mechanix Mpact"
+            }, {
+                id: 54,
+                title: "GĂNG TAY SUOMY DÀI ĐEN DẠ QUANG",
+                price_sale: "540,000đ",
+                price: "640,000đ",
+                img: "../img/Gangtay/6.webp",
+                images: ["../img/Gangtay/6.webp"],
+                description: "GĂNG TAY SUOMY DÀI ĐEN DẠ QUANG, trẻ trung và cá tính.",
+                material: "nhựa PU, da lộn và cotton",
+                weight: "Khoảng 222 gram.",
+                size: "M",
+                color: "Đen dạ quang",
+                brand: "SUOMY"
+            },
+
+
+
+        ];
+        const khac = [{
+            id: 55,
+            title: "Royal M179 Tem V1 Xanh Lá",
+            price_sale: "500,000đ",
+            price: "600,000đ",
+            img: "../img/mbh_latcam/latcam01.jpg",
+            images: ["../img/mbh_latcam/latcam01.jpg"], // Multiple images
+            description: "Royal M179 Tem V1 Xanh Lá, phong cách mạnh mẽ.",
+            material: "Nhựa ABS nguyên sinh",
+            weight: "1237g ± 50g",
+            size: "L và XL",
+            color: "Xanh lá",
+            brand: "Royal"
+        }, {
+            id: 56,
+            title: "Royal M179 Tem V1 Đỏ",
+            price_sale: "520,000đ",
+            price: "620,000đ",
+            img: "../img/mbh_latcam/latcam02.jpg",
+            images: ["../img/mbh_latcam/latcam02.jpg"],
+            description: "Royal M179 Tem V1 Đỏ, thanh lịch và sang trọng.",
+            material: "Nhựa ABS",
+            weight: "1237g ± 50g",
+            size: "L",
+            color: "Đỏ",
+            brand: "Royal"
+        }, {
+            id: 57,
+            title: "Royal M179 Tem V3 Xanh dương",
+            price_sale: "550,000đ",
+            price: "650,000đ",
+            img: "../img/mbh_latcam/latcam03.jpg",
+            images: ["../img/mbh_latcam/latcam03.jpg"],
+            description: "Royal M179 Tem V3 Xanh dương, nổi bật và ấn tượng.",
+            material: "Nhựa ABS",
+            weight: "1237g ± 50g",
+            size: "M",
+            color: "Xanh Dương",
+            brand: "Royal"
+        }, {
+            id: 58,
+            title: "Royal M179 Đen mờ",
+            price_sale: "530,000đ",
+            price: "630,000đ",
+            img: "../img/mbh_latcam/latcam04.jpg",
+            images: ["../img/mbh_latcam/latcam04.jpg"],
+            description: "Royal M179 Đen mờ, thời trang và hiện đại.",
+            material: "Nhựa ABS",
+            weight: "1237g ± 50g",
+            size: "S",
+            color: "Đen mờ",
+            brand: "Royal"
+        }, {
+            id: 59,
+            title: "Royal M179 Đen carbon",
+            price_sale: "540,000đ",
+            price: "640,000đ",
+            img: "../img/mbh_latcam/latcam05.jpg",
+            images: ["../img/mbh_latcam/latcam05.jpg"],
+            description: "Royal M179 Đen carbon, trẻ trung và cá tính.",
+            material: "Nhựa ABS",
+            weight: "1237g ± 50g",
+            size: "M",
+            color: "Đen carbon",
+            brand: "Royal"
+        }, {
+            id: 60,
+            title: "GĂNG TAY MECHANIX MPACT ĐEN VÀNG",
+            price_sale: "540,000đ",
+            price: "640,000đ",
+            img: "../img/Gangtay/5.webp",
+            images: ["../img/Gangtay/5.webp"],
+            description: "GĂNG TAY MECHANIX MPACT DÀI ĐEN VÀNG, trẻ trung và cá tính.",
+            material: "nhựa PU, da lộn và cotton",
+            weight: "Khoảng 222 gram.",
+            size: "M",
+            color: "Đen, Đen Vàng, Đen Đỏ",
+            brand: "Mechanix Mpact"
+        }, {
+            id: 61,
+            title: "Kính SOL Bubble Gương",
+            price_sale: "225,000đ",
+            price: "275,000đ",
+            img: "../img/mbh_kinh/kinh07.jpg",
+            images: ["../img/mbh_kinh/kinh07.jpg"],
+            description: "Kính SOL Bubble Gương, nổi bật và phong cách.",
+            material: "Polycarbonate cực bền và dẻo",
+            weight: "150g",
+            size: "Free Size",
+            color: "7 màu, trà, trong và gương",
+            brand: "SOL"
+        }, {
+            id: 62,
+            title: "Royal M139 Đen Bóng",
+            price_sale: "580,000đ",
+            price: "680,000đ",
+            img: "../img/Nón34/7.jpg",
+            images: ["../img/Nón34/7.jpg"],
+            description: "Royal M139 Đen Bóng, phong cách hiện đại.",
+            material: "Nhựa ABS",
+            weight: "Khoảng 950 gram.",
+            size: "	M, L và XL.",
+            color: "Đen, trắng, xanh, đỏ, hồng,..",
+            brand: "Royal (Mẫu độc quyền)"
+        }, {
+            id: 63,
+            title: "Mắt ếch vàng",
+            price_sale: "110,000đ",
+            price: "210,000đ",
+            img: "../img/phukien/6.jpg",
+            images: ["../img/phukien/6.jpg"],
+            description: "Mắt ếch vàng, phong cách năng động.",
+            material: "Nhựa",
+            weight: "Khoảng 10 gram.",
+            size: "0",
+            color: "Hồng, đỏ, đen, vàng, xanh",
+            brand: "không"
+        }, ];
+
+
+        const allProducts = [...non_34, ...non_12, ...non_fullface, ...nonxedap, ...phukien, ...kinh, ...gangtay, ...khac];
+
+        // Hiển thị tất cả sản phẩm
+        function displayAllProducts() {
+            allProducts.forEach(product => {
+                $('#product-list').append(`
+                <div class="col-md-4">
+                    <div class="product-card" onclick="showDetail(${product.id})">
+                        <img src="${product.img}" alt="${product.title}" class="img-fluid">
+                        <h5>${product.title}</h5>
+                        <p>Giá: <span class="text-decoration-line-through">${product.price}</span> ${product.price_sale}</p>
+                    </div>
+                </div>
+            `);
+            });
+        }
+
+        // Hiển thị chi tiết sản phẩm
+        function showDetail(productId) {
+            // Lọc sản phẩm từ mảng allProducts sử dụng ID để tìm sản phẩm
+            const product = allProducts.find(p => p.id === productId);
+
+            if (product) {
+                var imagesHTML = product.images.map(image => `<img src="${image}" alt="${product.title}" class="img-fluid">`).join('');
+
+                var productHTML = `
+            <div class="khungChiTietSanPham"> 
+                <button class="btn btn-secondary" onclick="goBack()">X</button> <!-- Nút Trở lại -->
+                <div class="tieuDe">${product.title}</div>
+                <div class="sanPhamChinh">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="image-gallery">${imagesHTML}</div> <!-- Image gallery -->
+                        </div>
+                        <div class="col-4">
+                            <div style="color: #ffc114;" class="rating d-flex">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <p style="color: red;">(Sản phẩm được đánh giá 5 sao)</p>
+                            </div>
+                            <p class="price">${product.price_sale} <del class="price_sale">${product.price}</del></p>
+                            <div class="save-price">
+                                <strong>Mua nón bảo hiểm chất lượng tại chúng tôi!</strong>
+                            </div>
+                            <h6 class="mt-3">${product.title}</h6>
+                            <p>Chất liệu: ${product.material}</p>
+                            <p>Trọng lượng: ${product.weight}</p>
+                            <p>Kích thước: ${product.size}</p>
+                            <p>Màu sắc: ${product.color}</p>
+                            <p>Thương hiệu: ${product.brand}</p>
+                            <a href="#" class="button btn" onclick="addToCart(${product.id})"><span>Thêm vào giỏ hàng</span></a>
+                            <a href="#" class="button btn"> <span>Mua ngay với giá: ${product.price_sale}</span> </a>
+                        </div>
+                        <div class="col-4">
+                            <div class="for-mobile">
+                                <h4>LÝ DO KHÁCH HÀNG CHỌN CHÚNG TÔI</h4>
+                                <ul>
+                                    <li>
+                                        <img src="../img/anhChiTietSP/caiDat.png" alt="">
+                                        <p>Hàng chính hãng giá rẻ</p>
+                                    </li>
+                                    <li>
+                                        <img src="../img/anhChiTietSP/doitra.png" alt="">
+                                        <p>Dễ dàng đổi trả</p>
+                                    </li>
+                                    <li>
+                                        <img src="../img/anhChiTietSP/evo_policy_img_3.png" alt="">
+                                        <p>Giao hàng siêu tốc</p>
+                                    </li>
+                                    <li>
+                                        <img src="../img/anhChiTietSP/evo_policy_img_4.png" alt="">
+                                        <p>Kinh nghiệm hơn 10 năm</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+                $('#product-details-container').html(productHTML);
+                $('#product-list').hide();
+                $('#product-details-container').show();
+            }
+        }
+
+        // Hàm quay lại danh sách sản phẩm
+        function goBack() {
+            $('#product-details-container').hide();
+            $('#product-list').show();
+        }
+
+        // Thêm sản phẩm vào giỏ hàng
+       // Thêm sản phẩm vào giỏ hàng
+function addToCart(productId) {
+    const product = allProducts.find(p => p.id === productId);
+    if (product) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingProduct = cart.find(item => item.id === productId);
+
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else { 
+            product.quantity = 1;
+            // Lưu giá sale vào giỏ hàng thay vì giá gốc
+            cart.push({
+                ...product,
+                price: product.price_sale
+            });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartItemCount();
+        alert(`Sản phẩm ${product.title} đã được thêm vào giỏ hàng.`);
+    }
+}
+
+
+        // Cập nhật số lượng sản phẩm trong giỏ hàng
+        function updateCartItemCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
+
+            const cartItemCountElement = document.getElementById("cart-item-count");
+            if (cartItemCountElement) {
+                cartItemCountElement.textContent = cartItemCount;
+            }
+        }
+
+        // Gọi hàm để hiển thị sản phẩm và cập nhật giỏ hàng khi trang tải
+        $(document).ready(() => {
+            displayAllProducts();
+            updateCartItemCount();
+        });
+
+        // Function to format the current date
+        function getCurrentDate() {
+            var today = new Date();
+            var weekday = today.toLocaleDateString('vi-VN', {
+                weekday: 'long'
+            });
+            var day = today.getDate();
+            var month = today.toLocaleDateString('vi-VN', {
+                month: 'long'
+            });
+            var year = today.getFullYear();
+
+            return weekday + ', ' + day + ' ' + month + ' ' + year;
+        }
+
+        // Update date on page load
+        window.onload = function() {
+            var currentDate = getCurrentDate();
+            document.getElementById("dateNow").textContent = currentDate;
+        };
+    </script>
+
+
+
+</body>
+
+</html>

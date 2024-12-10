@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài viết</title>
+    <link rel="icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- js -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/popper.min.js"></script>
+
+    <style>
+        .text-black {
+            color: black;
+            /* Màu chữ đen */
+        }
+        
+        #chu {
+            text-align: center;
+            /* Căn giữa văn bản trong hàng */
+        }
+        
+        .border {
+            border: 1px solid #e0e0e0;
+            /* Đường viền nhẹ cho các phần */
+        }
+        
+        .rounded {
+            border-radius: 10px;
+            /* Bo tròn các góc */
+        }
+        
+        .shadow-sm {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Đổ bóng nhẹ */
+        }
+        
+        .btn-dark {
+            background-color: #000;
+            /* Màu nền nút */
+            color: #fff;
+            /* Màu chữ nút */
+            font-size: 1.2rem;
+            /* Kích thước chữ nút */
+            padding: 10px 20px;
+            /* Khoảng cách bên trong nút */
+            border: none;
+            /* Xóa viền nút */
+            border-radius: 5px;
+            /* Bo tròn góc nút */
+            cursor: pointer;
+            /* Con trỏ khi di chuột qua nút */
+            transition: background-color 0.3s ease;
+            /* Hiệu ứng chuyển màu nền */
+            margin-bottom: 20px;
+        }
+        
+        .btn-dark:hover {
+            background-color: #444;
+            /* Màu nền khi di chuột qua nút */
+        }
+        
+        h6 {
+            font-weight: bold;
+            /* Đậm tiêu đề */
+        }
+        
+        .mb-4 {
+            margin-bottom: 1.5rem;
+            /* Khoảng cách dưới cho các phần */
+        }
+        
+        .mt-2 {
+            margin-top: 1rem;
+            /* Khoảng cách trên cho phần nội dung */
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 100%;" class="container-fuild">
+        <div class="fixed">
+            <!--  -->
+            <div class="container-fluid py-2" id="top-header">
+                <div class="row align-items-center">
+                    <!-- Date Display -->
+                    <div class="col-md-3 text-center text-md-start my-1">
+                        <i class="bi bi-calendar-event"></i>
+                        <span id="dateNow"></span>
+                    </div>
+
+                    <!-- Contact Links -->
+                    <div class="col-md-9 d-flex justify-content-end">
+                        <ul id="top-contact" class="list-inline mb-0">
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/thanh-vien.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-people"></i> Thành viên
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangky.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-pencil-square"></i> Đăng ký
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangnhap.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-box-arrow-in-right"></i> Đăng nhập
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/lienhe.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-info-circle"></i> Liên hệ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- end top header -->
+
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-xl navbar-dark sticky-top p-2" id="navbar-menu">
+                <!-- Brand and Logo -->
+                <a class="navbar-brand" href="../html/index.html">
+                    <img src="../img/icontrangchu/logo.jpg" alt="logo" style="width: 50px; border-radius: 10px;">
+                </a>
+                <a href="../html/index.html" class="navbar-brand font-weight-bold"> HY HELMET</a>
+
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars text-dark"></i>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="nav-menu-link">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../html/index.html"><i class="bi bi-house-door-fill"></i> TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/gioithieu.html"><i class="bi bi-info-circle"></i> GIỚI THIỆU</a>
+                        </li>
+
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-list"></i> SẢN PHẨM <i class="bi bi-caret-down-fill"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbardrop">
+                                <li><a class="dropdown-item" href="../html/sanpham.html">Tất cả sản phẩm</a></li>
+                                <li><a class="dropdown-item" href="../html/non_34.html">Mũ bảo hiểm 3/4 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/non_fullface.html">Mũ bảo hiểm Fullface</a></li>
+                                <li><a class="dropdown-item" href="../html/non_12.html">Mũ bảo hiểm 1/2 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/nonxedap.html">Mũ bảo hiểm Xe Đạp</a></li>
+                                <li><a class="dropdown-item" href="../html/kids.html">Mũ bảo hiểm trẻ em</a></li>
+                                <li><a class="dropdown-item" href="../html/phukien.html">Phụ Kiện</a></li>
+                                <li><a class="dropdown-item" href="../html/kinh.html">Kính</a></li>
+                                <li><a class="dropdown-item" href="../html/gangtay.html">Găng Tay</a></li>
+                                <li><a class="dropdown-item" href="../html/khac.html">Khác</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/khuyenmai.html"><i class="bi bi-tag-fill"></i> KHUYẾN MÃI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/blog.html"><i class="bi bi-chat-dots-fill"></i> BÀI VIẾT</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/sitemap.html"><i class="bi bi-map-fill"></i> SITE MAP</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tìm kiếm và tài khoản/gio hàng ở góc phải -->
+                    <div class="d-flex align-items-center ms-3">
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." />
+                            <button id="search-button" onclick="toggleSearchInput()">
+                                <img src="../img/icon/btsearch.png" alt="Search" />
+                            </button>
+                        </div>
+
+
+
+                        <div class="taiKhoan-gioHang ms-3">
+                            <a href="../html/thanhtoan.html" id="cart-icon" onmouseover="showCartItems()">
+                                <i style="font-size: 30px !important; color: white;" class="bi bi-cart-fill"></i>
+                                <span style="color: white;" id="cart-item-count" class="badge bg-warning rounded-circle">0</span>
+                            </a>
+                            <div id="cart-items-container" class="cart-items-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Navbar End -->
+
+        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../html/index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../html/blog.html" class="text-dark">Bài viết</a></li>
+            </ol>
+        </nav>
+
+        <!-- Bài viết start -->
+        <div class="container-fluid my-4">
+            <h3 class="display-4 text-center text-black mb-4">Bài viết</h3>
+            <div class="row p-3 justify-content-center" id="chu">
+                <div class="col-md-6 col-lg-4 border rounded m-2 p-3 shadow-sm">
+                    <!-- Thay đổi kích thước cột -->
+                    <div class="row align-items-center">
+                        <div class="col-12 p-2">
+                            <img src="../img/icontrangchu/blog1.png" class="img-fluid rounded" alt="Blog 1">
+                        </div>
+                        <div class="col-12 mt-2">
+                            <h6 class="mb-3">5 lợi ích của việc đội mũ bảo hiểm khi lái xe máy</h6>
+                            <p class="text-justify mb-4">
+                                Đội mũ bảo hiểm khi lái xe máy không chỉ là việc bắt buộc mà còn mang lại nhiều lợi ích cho sức khỏe và an toàn của bạn. Hãy tìm hiểu 5 lợi ích quan trọng này trong bài viết sau.
+                            </p>
+                            <div class="text-center">
+                                <a href="../html/blog1.html" class="btn btn-dark">Xem thêm ...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 border rounded m-2 p-3 shadow-sm">
+                    <div class="row align-items-center">
+                        <div class="col-12 p-2">
+                            <img src="../img/icontrangchu/blog2.png" class="img-fluid rounded" alt="Blog 2">
+                        </div>
+                        <div class="col-12 mt-2">
+                            <h6 class="mb-3">Chọn mũ bảo hiểm phù hợp với hình dáng khuôn mặt của bạn</h6>
+                            <p class="text-justify mb-4">
+                                Mũ bảo hiểm không chỉ cần phải đảm bảo an toàn mà còn phải phản ánh phong cách và hình dáng khuôn mặt của bạn. Hãy cùng tìm hiểu cách chọn mũ bảo hiểm phù hợp với hình dáng khuôn mặt của bạn trong bài viết này.
+                            </p>
+                            <div class="text-center">
+                                <a href="../html/blog2.html" class="btn btn-dark">Xem thêm ...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end bài viết -->
+
+    </div>
+    <!--  -->
+
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>LIÊN HỆ</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt-fill"></i> Địa chỉ: Gò Vấp, TPHCM</li>
+                        <li><i class="bi bi-telephone-fill"></i> Số điện thoại: 0123456789</li>
+                        <li><i class="bi bi-envelope-fill"></i> Email: HYHelmet@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>CHÍNH SÁCH</h5>
+                    <ul>
+                        <li><a href="../html/index.html">Trang chủ</a></li>
+                        <li><a href="../html/gioithieu.html">Giới thiệu</a></li>
+                        <li><a href="../html/sanpham.html">Sản phẩm</a></li>
+                        <li><a href="../html/khuyenmai.html">Khuyến mãi</a></li>
+                        <li><a href="../html/blog.html">Bài viết</a></li>
+                        <li><a href="#">Site map</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                        <li><a href="#">Theo dõi đơn hàng</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="cty-follow-us mb-3">
+                        <h5>TƯƠNG TÁC VỚI CHÚNG TÔI</h5>
+                        <ul id="bottom-social-media" class="font-size-large">
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-facebook"></i></a></li>
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-tiktok"></i></a></li>
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-youtube"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5>PHƯƠNG THỨC THANH TOÁN</h5>
+                        <ul class="nav">
+                            <li class="mx-1"><img src="../img/img/payment_1_img.webp" alt="Payment Method 1"></li>
+                            <li class="mx-1"><img src="../img/img/payment_2_img.webp" alt="Payment Method 2"></li>
+                            <li class="mx-1"><img src="../img/img/payment_3_img.webp" alt="Payment Method 3"></li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5>PHƯƠNG THỨC VẬN CHUYỂN</h5>
+                        <ul class="nav">
+                            <li class="mx-1"><img src="../img/img/shipment_1_img.webp" alt="Shipping Method 1"></li>
+                            <li class="mx-1"><img src="../img/img/shipment_2_img.webp" alt="Shipping Method 2"></li>
+                            <li class="mx-1"><img src="../img/img/shipment_3_img.webp" alt="Shipping Method 3"></li>
+                            <li class="mx-1"><img src="../img/img/shipment_4_img.webp" alt="Shipping Method 4"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>&copy; Bản quyền thuộc về HY HELMET.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

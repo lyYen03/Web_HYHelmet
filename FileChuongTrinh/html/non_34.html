@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nón 3/4</title>
+    <link rel="icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- js -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+
+    <style>
+        .product-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .product-card img {
+            max-width: 100%;
+            height: 100px;
+        }
+        
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .product-list .col-md-4 {
+            flex: 1 1 calc(33.333% - 20px);
+            margin: 10px;
+        }
+        
+        .product-detail {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .image-gallery img {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+        /* Khung chứa hình ảnh */
+        
+        .slider-container {
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            width: 100%;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        
+        .image-container {
+            display: flex;
+            animation: gentleSlide 3s ease-in-out infinite;
+        }
+        
+        .image-container img {
+            width: 300px;
+            height: 200px;
+            margin: 0 10px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        /* Keyframes cho hiệu ứng rung nhẹ */
+        
+        @keyframes gentleSlide {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(0);
+            }
+            75% {
+                transform: translateX(10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 100%;" class="container-fuild">
+        <div class="fixed">
+            <!--  -->
+            <div class="container-fluid py-2" id="top-header">
+                <div class="row align-items-center">
+                    <!-- Date Display -->
+                    <div class="col-md-3 text-center text-md-start my-1">
+                        <i class="bi bi-calendar-event"></i>
+                        <span id="dateNow"></span>
+                    </div>
+
+                    <!-- Contact Links -->
+                    <div class="col-md-9 d-flex justify-content-end">
+                        <ul id="top-contact" class="list-inline mb-0">
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/thanh-vien.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-people"></i> Thành viên
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangky.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-pencil-square"></i> Đăng ký
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangnhap.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-box-arrow-in-right"></i> Đăng nhập
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/lienhe.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-info-circle"></i> Liên hệ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- end top header -->
+
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-xl navbar-dark sticky-top p-2" id="navbar-menu">
+                <!-- Brand and Logo -->
+                <a class="navbar-brand" href="../html/index.html">
+                    <img src="../img/icontrangchu/logo.jpg" alt="logo" style="width: 50px; border-radius: 10px;">
+                </a>
+                <a href="../html/index.html" class="navbar-brand font-weight-bold"> HY HELMET</a>
+
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars text-dark"></i>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="nav-menu-link">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../html/index.html"><i class="bi bi-house-door-fill"></i> TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/gioithieu.html"><i class="bi bi-info-circle"></i> GIỚI THIỆU</a>
+                        </li>
+
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-list"></i> SẢN PHẨM <i class="bi bi-caret-down-fill"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbardrop">
+                                <li><a class="dropdown-item" href="../html/sanpham.html">Tất cả sản phẩm</a></li>
+                                <li><a class="dropdown-item" href="../html/non_34.html">Mũ bảo hiểm 3/4 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/non_fullface.html">Mũ bảo hiểm Fullface</a></li>
+                                <li><a class="dropdown-item" href="../html/non_12.html">Mũ bảo hiểm 1/2 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/nonxedap.html">Mũ bảo hiểm Xe Đạp</a></li>
+                                <li><a class="dropdown-item" href="../html/kids.html">Mũ bảo hiểm trẻ em</a></li>
+                                <li><a class="dropdown-item" href="../html/phukien.html">Phụ Kiện</a></li>
+                                <li><a class="dropdown-item" href="../html/kinh.html">Kính</a></li>
+                                <li><a class="dropdown-item" href="../html/gangtay.html">Găng Tay</a></li>
+                                <li><a class="dropdown-item" href="../html/khac.html">Khác</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/khuyenmai.html"><i class="bi bi-tag-fill"></i> KHUYẾN MÃI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/blog.html"><i class="bi bi-chat-dots-fill"></i> BÀI VIẾT</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/sitemap.html"><i class="bi bi-map-fill"></i> SITE MAP</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tìm kiếm và tài khoản/gio hàng ở góc phải -->
+                    <div class="d-flex align-items-center ms-3">
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." />
+                            <button id="search-button" onclick="toggleSearchInput()">
+                                <img src="../img/icon/btsearch.png" alt="Search" />
+                            </button>
+                        </div>
+
+
+
+                        <div class="taiKhoan-gioHang ms-3">
+                            <a href="../html/thanhtoan.html" id="cart-icon" onmouseover="showCartItems()">
+                                <i style="font-size: 30px !important; color: white;" class="bi bi-cart-fill"></i>
+                                <span style="color: white;" id="cart-item-count" class="badge bg-warning rounded-circle">0</span>
+                            </a>
+                            <div id="cart-items-container" class="cart-items-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Navbar End -->
+
+        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../html/index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../html/sanpham.html">Sản phẩm</a></li>
+                <li class="breadcrumb-item"><a href="../html/non_34.html" class="text-dark">Mũ bảo hiểm 3/4 đầu</a></li>
+            </ol>
+        </nav>
+
+
+
+        <div class="container hangSanXuat">
+            <h6 class="timkiem">Danh mục:</h6>
+            <ul class="d-flex">
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/non_34.html" onclick="displayProductsByBrand('Nón 3/4')">
+                            <img src="../img/iconsp/1.jpg" alt="">
+                            <span class="category-name">Nón 3/4</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/non_fullface.html" onclick="displayProductsByBrand('Nón FullFace')">
+                            <img src="../img/iconsp/2.jpg" alt="">
+                            <span class="category-name">Nón FullFace</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/non_12.html" onclick="displayProductsByBrand('Nón Nửa đầu')">
+                            <img src="../img/iconsp/3.jpg" alt="">
+                            <span class="category-name">Nón Nửa đầu</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/phukien.html" onclick="displayProductsByBrand('Phụ Kiện')">
+                            <img src="../img/iconsp/4.jpg" alt="">
+                            <span class="category-name">Phụ Kiện</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/kids.html" onclick="displayProductsByBrand('Trẻ em')">
+                            <img src="../img/iconsp/5.jpg" alt="">
+                            <span class="category-name">Trẻ em</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="san-pham">
+                        <a href="../html/nonxedap.html" onclick="displayProductsByBrand('Xe đạp')">
+                            <img src="../img/iconsp/6.jpg" alt="">
+                            <span class="category-name">Xe đạp</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="container product-list mt-5" id="product-list">
+            <div class="tensp">
+                <img src="../img/icontrangchu/sp34.png" style="width: 1290px;" alt="#">
+            </div>
+            <!-- Danh sách sản phẩm sẽ được chèn ở đây -->
+        </div>
+
+        <div class="product-detail" id="product-detail">
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="detail-image" src="" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h3 id="detail-title"></h3>
+                    <p id="detail-price"></p>
+                    <p id="detail-description"></p>
+                    <button class="btn btn-secondary" onclick="hideDetail()">Trở lại</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="product-details-container"></div>
+        <!-- Container for the detailed view -->
+        <!--  -->
+        <div class="slider-container">
+            <div class="image-container">
+                <img src="../img/icontrangchu/sk1.webp" alt="Hình 1">
+                <img src="../img/icontrangchu/sk2.webp" alt="Hình 2">
+                <img src="../img/icontrangchu/sk3.webp" alt="Hình 3">
+                <img src="../img/icontrangchu/sk4.webp" alt="Hình 4">
+            </div>
+            <!--  -->
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>LIÊN HỆ</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-geo-alt-fill"></i> Địa chỉ: Gò Vấp, TPHCM</li>
+                            <li><i class="bi bi-telephone-fill"></i> Số điện thoại: 0123456789</li>
+                            <li><i class="bi bi-envelope-fill"></i> Email: HYHelmet@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>CHÍNH SÁCH</h5>
+                        <ul>
+                            <li><a href="../html/index.html">Trang chủ</a></li>
+                            <li><a href="../html/gioithieu.html">Giới thiệu</a></li>
+                            <li><a href="../html/sanpham.html">Sản phẩm</a></li>
+                            <li><a href="../html/khuyenmai.html">Khuyến mãi</a></li>
+                            <li><a href="../html/blog.html">Bài viết</a></li>
+                            <li><a href="#">Site map</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                        <ul>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Điều khoản dịch vụ</a></li>
+                            <li><a href="#">Theo dõi đơn hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="cty-follow-us mb-3">
+                            <h5>TƯƠNG TÁC VỚI CHÚNG TÔI</h5>
+                            <ul id="bottom-social-media" class="font-size-large">
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-tiktok"></i></a></li>
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-youtube"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>PHƯƠNG THỨC THANH TOÁN</h5>
+                            <ul class="nav">
+                                <li class="mx-1"><img src="../img/img/payment_1_img.webp" alt="Payment Method 1"></li>
+                                <li class="mx-1"><img src="../img/img/payment_2_img.webp" alt="Payment Method 2"></li>
+                                <li class="mx-1"><img src="../img/img/payment_3_img.webp" alt="Payment Method 3"></li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>PHƯƠNG THỨC VẬN CHUYỂN</h5>
+                            <ul class="nav">
+                                <li class="mx-1"><img src="../img/img/shipment_1_img.webp" alt="Shipping Method 1"></li>
+                                <li class="mx-1"><img src="../img/img/shipment_2_img.webp" alt="Shipping Method 2"></li>
+                                <li class="mx-1"><img src="../img/img/shipment_3_img.webp" alt="Shipping Method 3"></li>
+                                <li class="mx-1"><img src="../img/img/shipment_4_img.webp" alt="Shipping Method 4"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p>&copy; Bản quyền thuộc về HY HELMET.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            let products = [
+            {
+                id: 1,
+                title: "ROYCE XH15 Trắng Bóng",
+                price_sale: "500,000đ",
+                price: "600,000đ",
+                img: "../img/Nón34/1.jpg",
+                images: ["../img/Nón34/1.jpg"], // Multiple images
+                description: "ROYCE XH15 Trắng Bóng, phong cách mạnh mẽ.",
+                material: "Nhựa ABS",
+                weight: "Khoảng 950 gram.",
+                size: "	L, XL",
+                color: "Đen, trắng, xanh,..",
+                brand: "Royce"
+            },
+            {
+                id: 2,
+                title: "ROYCE XH15 Đen Nhám",
+                price_sale: "520,000đ",
+                price: "620,000đ",
+                img: "../img/Nón34/2.jpg",
+                images: ["../img/Nón34/2.jpg"],
+                description: "ROYCE XH15 Đen Nhám, thanh lịch và sang trọng.",
+                material: "Nhựa ABS",
+                weight: "Khoảng 950 gram",
+                size: "L, XL",
+                color: "Đen, trắng, xanh,..",
+                brand: "Royce"
+            },
+            {
+                id: 3,
+                title: "Royce XH26 V3 Nhám",
+                price_sale: "550,000đ",
+                price: "650,000đ",
+                img: "../img/Nón34/3.jpg",
+                images: ["../img/Nón34/3.jpg"],
+                description: "Royce XH26 V3 Nhám, nổi bật và ấn tượng.",
+                material: "Nhựa ABS",
+                weight: "Khoảng 950 gram.",
+                size: "	M, L, XL",
+                color: "Đen, trắng, xanh, đỏ, hồng,..",
+                brand: "Royce"
+            },
+            {
+                id: 4,
+                title: "Royce XH26 V6 Nhám",
+                price_sale: "570,000đ",
+                price: "720,000đ",
+                img: "../img/Nón34/4.jpg",
+                images: ["../img/Nón34/4.jpg"],
+                description: "Royce XH26 V6 Nhám, thời trang và hiện đại.",
+                material: "Nhựa ABS",
+                weight: "Khoảng 950 gram.",
+                size: "M, L, XL",
+                color: "Đen, trắng, xanh, đỏ, hồng,..",
+                brand: "Royce"
+            },
+            {
+                id: 5,
+                title: "Royce XH26 Trắng Bóng",
+                price_sale: "540,000đ",
+                price: "700,000đ",
+                img: "../img/Nón34/5.jpg",
+                images: ["../img/Nón34/5.jpg"],
+                description: "Royce XH26 Trắng Bóng, trẻ trung và cá tính.",
+                material: "Nhựa ABS",
+                weight: "Khoảng 950 gram.",
+                size: "	M, L, XL",
+                color: "Đen, trắng, xanh, đỏ, hồng,..",
+                brand: "Royce"
+            },
+            {
+                id: 6,
+                title: "Royce XH26 Đen nhám",
+                price_sale: "560,000đ",
+                price: "700,000đ",
+                img: "../img/Nón34/6.jpg",
+                images: ["../img/Nón34/6.jpg"],
+                description: "Royce XH26 Đen nhám, dịu dàng và thanh lịch.",
+                material: "Nhựa ABS",
+                weight: "Khoảng 950 gram.",
+                size: "	M, L, XL",
+                color: "Đen, trắng, xanh, đỏ, hồng",
+                brand: "Royce"
+            }, 
+            {
+                id: 7,
+                title: "Royal M139 Vàng Bóng",
+                price_sale: "600,000đ",
+                price: "700,000đ",
+                img: "../img/Nón34/8.jpg",
+                images: ["../img/Nón34/8.jpg"],
+                description: "Royal M139 Vàng Bóng, sang trọng và nổi bật.",
+                material: "Nhựa ABS",
+                weight: "Khoảng 950 gram",
+                size: "	M, L và XL.",
+                color: "Đen, trắng, xanh, đỏ, hồng,..",
+                brand: "Royal (Mẫu độc quyền)"
+            },
+            {
+                id: 8,
+                title: "Royal M139 Đen Bóng",
+                price_sale: "580,000đ",
+                price: "680,000đ",
+                img: "../img/Nón34/7.jpg",
+                images: ["../img/Nón34/7.jpg"],
+                description: "Royal M139 Đen Bóng, phong cách hiện đại.",
+                material: "Nhựa ABS",
+                weight: "Khoảng 950 gram.",
+                size: "	M, L và XL.",
+                color: "Đen, trắng, xanh, đỏ, hồng,..",
+                brand: "Royal (Mẫu độc quyền)"
+            },
+            {
+                id: 9,
+                title: "Nón Balder Carbon Vân Dệt",
+                price_sale: " 1,920,000đ",
+                price: "2,400,000đ",
+                img: "../img/Nón34/9.jpg",
+                images: ["../img/Nón34/9.jpg"],
+                description: "Nón Balder Carbon Vân Dệt, sang trọng và nổi bật.",
+                material: "	Sợi carbon 100%",
+                weight: "Khoảng 600 gram.",
+                size: "	M, L và XL.",
+                color: "Đen, trắng, xanh, đỏ, hồng,..",
+                brand: "Balder"
+            }
+            ];
+    
+            function displayProducts() {
+                products.forEach(product => {
+                    $('#product-list').append(`
+                        <div class="col-md-4">
+                            <div class="product-card" onclick="showDetail(${product.id})">
+                                <img src="${product.img}" alt="${product.title}">
+                                <h5>${product.title}</h5>
+                                <p>Giá: <span class="text-decoration-line-through">${product.price}</span> ${product.price_sale}</p>
+                            </div>
+                        </div>
+                    `);
+                });
+            }
+    
+            displayProducts();
+    
+            window.showDetail = function (id) {
+                var product = products.find(p => p.id === id);
+                if (product) {
+                    var productDetailsContainer = document.getElementById('product-details-container');
+    
+                    var imagesHTML = product.images.map(image => `<img src="${image}" alt="${product.title}" class="img-fluid">`).join('');
+    
+                    var productHTML = `
+                        <div class="khungChiTietSanPham"> 
+                             <button class="btn btn-secondary" onclick="goBack()">X</button> <!-- Nút Trở lại -->
+                            <div class="tieuDe">${product.title}</div>
+                            <div class="sanPhamChinh">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="image-gallery">${imagesHTML}</div> <!-- Image gallery -->
+                                    </div>
+                                    <div class="col-4">
+                                        <div style="color: #ffc114;" class="rating d-flex">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <p style="color: red;">(Sản phẩm được đánh giá 5 sao)</p>
+                                        </div>
+                                        <p class="price">${product.price_sale} <del class="price_sale">${product.price}</del></p>
+                                        <div class="save-price">
+                                            <strong>Mua nón bảo hiểm chất lượng tại chúng tôi!</strong>
+                                        </div>
+                                        <h6 class="mt-3">${product.title}</h6>
+                                        <p>Chất liệu: ${product.material}</p>
+                                        <p>Trọng lượng: ${product.weight}</p>
+                                        <p>Kích thước: ${product.size}</p>
+                                        <p>Màu sắc: ${product.color}</p>
+                                        <p>Thương hiệu: ${product.brand}</p>
+                                        <a href="#" class="button btn" onclick="addToCart(${product.id})"><span>Thêm vào giỏ hàng</span></a>
+                                        <a href="#" class="button btn"> <span>Mua ngay với giá: ${product.price_sale}</span> </a>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="for-mobile">
+                                            <h4>LÝ DO KHÁCH HÀNG CHỌN CHÚNG TÔI</h4>
+                                            <ul>
+                                                <li>
+                                                    <img src="../img/anhChiTietSP/caiDat.png" alt="">
+                                                    <p>Hàng chính hãng giá rẻ</p>
+                                                </li>
+                                                <li>
+                                                    <img src="../img/anhChiTietSP/doitra.png" alt="">
+                                                    <p>Dễ dàng đổi trả</p>
+                                                </li>
+                                                <li>
+                                                    <img src="../img/anhChiTietSP/evo_policy_img_3.png" alt="">
+                                                    <p>Giao hàng siêu tốc</p>
+                                                </li>
+                                                <li>
+                                                    <img src="../img/anhChiTietSP/evo_policy_img_4.png" alt="">
+                                                    <p>Kinh nghiệm hơn 10 năm</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+    
+                    productDetailsContainer.innerHTML = productHTML;
+                    $('#product-list').hide();
+                    $('#product-details-container').show();
+                }
+                window.goBack = function() {
+                    $('#product-details-container').hide(); // Ẩn phần chi tiết sản phẩm
+                    $('#product-list').show(); // Hiện lại danh sách sản phẩm
+                };
+            };
+           // Hàm thêm sản phẩm vào giỏ hàng
+    function addToCart(productId) {
+        // Tìm sản phẩm dựa trên ID trong mảng 'products'
+        var product = products.find(p => p.id === productId);
+        if (product) {
+            // Lấy danh sách giỏ hàng từ Local Storage hoặc tạo mảng trống nếu chưa có
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+            var existingProduct = cart.find(item => item.id === productId);
+            if (existingProduct) {
+                // Nếu đã có trong giỏ hàng, tăng số lượng lên 1
+                existingProduct.quantity += 1;
+            } else {
+                // Nếu chưa có trong giỏ hàng, thêm vào với số lượng ban đầu là 1
+                // Tạo một đối tượng sản phẩm cho giỏ hàng với giá sale
+                var cartProduct = {
+                    id: product.id,
+                    title: product.title,
+                    price: product.price_sale, // Lưu giá sale
+                    quantity: 1
+                };
+                cart.push(cartProduct);
+            }
+            
+            // Lưu danh sách giỏ hàng vào Local Storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Cập nhật số lượng hiển thị trên biểu tượng giỏ hàng
+            updateCartItemCount();
+            
+            // Thông báo cho người dùng
+            alert(`Sản phẩm ${product.title} đã được thêm vào giỏ hàng.`);
+        } else {
+            alert("Sản phẩm không tồn tại.");
+        }
+    }
+    
+    // Hàm cập nhật số lượng sản phẩm hiển thị trên biểu tượng giỏ hàng
+    function updateCartItemCount() {
+        // Lấy danh sách giỏ hàng từ Local Storage
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Tính tổng số lượng sản phẩm trong giỏ hàng
+        var cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
+        
+        // Hiển thị số lượng sản phẩm trên biểu tượng giỏ hàng
+        var cartItemCountElement = document.getElementById("cart-item-count");
+        if (cartItemCountElement) {
+            cartItemCountElement.textContent = cartItemCount;
+        }
+    }
+    
+    // Gọi hàm cập nhật số lượng ngay khi trang tải lại
+    updateCartItemCount();
+    
+
+            // Function to format the current date
+            function getCurrentDate() {
+                var today = new Date();
+                var weekday = today.toLocaleDateString('vi-VN', {
+                    weekday: 'long'
+                });
+                var day = today.getDate();
+                var month = today.toLocaleDateString('vi-VN', {
+                    month: 'long'
+                });
+                var year = today.getFullYear();
+
+                return weekday + ', ' + day + ' ' + month + ' ' + year;
+            }
+
+            // Update date on page load
+            window.onload = function() {
+                var currentDate = getCurrentDate();
+                document.getElementById("dateNow").textContent = currentDate;
+            };
+        </script>
+    </div>
+</body>
+
+</html>

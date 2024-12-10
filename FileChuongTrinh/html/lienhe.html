@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ</title>
+    <link rel="icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- js -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/popper.min.js"></script>
+
+    <style>
+        /* CSS cho khung chat */
+        
+        .chat-modal {
+            width: 300px;
+            height: 400px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .chat-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .chat-input input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .chat-input button {
+            margin-left: 8px;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .chat-input button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 100%;" class="container-fuild">
+        <div class="fixed">
+            <!--  -->
+            <div class="container-fluid py-2" id="top-header">
+                <div class="row align-items-center">
+                    <!-- Date Display -->
+                    <div class="col-md-3 text-center text-md-start my-1">
+                        <i class="bi bi-calendar-event"></i>
+                        <span id="dateNow"></span>
+                    </div>
+
+                    <!-- Contact Links -->
+                    <div class="col-md-9 d-flex justify-content-end">
+                        <ul id="top-contact" class="list-inline mb-0">
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/thanh-vien.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-people"></i> Thành viên
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangky.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-pencil-square"></i> Đăng ký
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangnhap.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-box-arrow-in-right"></i> Đăng nhập
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/lienhe.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-info-circle"></i> Liên hệ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- end top header -->
+
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-xl navbar-dark sticky-top p-2" id="navbar-menu">
+                <!-- Brand and Logo -->
+                <a class="navbar-brand" href="../html/index.html">
+                    <img src="../img/icontrangchu/logo.jpg" alt="logo" style="width: 50px; border-radius: 10px;">
+                </a>
+                <a href="../html/index.html" class="navbar-brand font-weight-bold"> HY HELMET</a>
+
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars text-dark"></i>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="nav-menu-link">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../html/index.html"><i class="bi bi-house-door-fill"></i> TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/gioithieu.html"><i class="bi bi-info-circle"></i> GIỚI THIỆU</a>
+                        </li>
+
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-list"></i> SẢN PHẨM <i class="bi bi-caret-down-fill"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbardrop">
+                                <li><a class="dropdown-item" href="../html/sanpham.html">Tất cả sản phẩm</a></li>
+                                <li><a class="dropdown-item" href="../html/non_34.html">Mũ bảo hiểm 3/4 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/non_fullface.html">Mũ bảo hiểm Fullface</a></li>
+                                <li><a class="dropdown-item" href="../html/non_12.html">Mũ bảo hiểm 1/2 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/nonxedap.html">Mũ bảo hiểm Xe Đạp</a></li>
+                                <li><a class="dropdown-item" href="../html/kids.html">Mũ bảo hiểm trẻ em</a></li>
+                                <li><a class="dropdown-item" href="../html/phukien.html">Phụ Kiện</a></li>
+                                <li><a class="dropdown-item" href="../html/kinh.html">Kính</a></li>
+                                <li><a class="dropdown-item" href="../html/gangtay.html">Găng Tay</a></li>
+                                <li><a class="dropdown-item" href="../html/khac.html">Khác</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/khuyenmai.html"><i class="bi bi-tag-fill"></i> KHUYẾN MÃI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/blog.html"><i class="bi bi-chat-dots-fill"></i> BÀI VIẾT</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/sitemap.html"><i class="bi bi-map-fill"></i> SITE MAP</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tìm kiếm và tài khoản/gio hàng ở góc phải -->
+                    <div class="d-flex align-items-center ms-3">
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." />
+                            <button id="search-button" onclick="toggleSearchInput()">
+                                <img src="../img/icon/btsearch.png" alt="Search" />
+                            </button>
+                        </div>
+
+
+
+                        <div class="taiKhoan-gioHang ms-3">
+                            <a href="../html/thanhtoan.html" id="cart-icon" onmouseover="showCartItems()">
+                                <i style="font-size: 30px !important; color: white;" class="bi bi-cart-fill"></i>
+                                <span style="color: white;" id="cart-item-count" class="badge bg-warning rounded-circle">0</span>
+                            </a>
+                            <div id="cart-items-container" class="cart-items-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Navbar End -->
+
+        </div>
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../html/index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../html/lienhe.html" class="text-dark">Liên hệ</a></li>
+            </ol>
+        </nav>
+
+        <div class="container mt-5 lienHe">
+            <h1>Liên Hệ</h1>
+            <div>
+                <p><b> Thông tin liên hệ</b></p>
+                <ul>
+                    <li> <b> Địa chỉ:</b> Đường 123 , Phường 6 , Quận Gò Vấp , TPHCM</li>
+                    <li> <b>Điện thoại:</b> 0123456789</li>
+                    <li> <b>Website:</b>
+                        <a href="../html/index.html"> HY HELMET</a>
+                    </li>
+                    <li> <b> Email:</b> HYHelmet@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <!--  -->
+
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>LIÊN HỆ</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt-fill"></i> Địa chỉ: Gò Vấp, TPHCM</li>
+                        <li><i class="bi bi-telephone-fill"></i> Số điện thoại: 0123456789</li>
+                        <li><i class="bi bi-envelope-fill"></i> Email: HYHelmet@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>CHÍNH SÁCH</h5>
+                    <ul>
+                        <li><a href="../html/index.html">Trang chủ</a></li>
+                        <li><a href="../html/gioithieu.html">Giới thiệu</a></li>
+                        <li><a href="../html/sanpham.html">Sản phẩm</a></li>
+                        <li><a href="../html/khuyenmai.html">Khuyến mãi</a></li>
+                        <li><a href="../html/blog.html">Bài viết</a></li>
+                        <li><a href="#">Site map</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                    <ul>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                        <li><a href="#">Theo dõi đơn hàng</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="cty-follow-us mb-3">
+                        <h5>TƯƠNG TÁC VỚI CHÚNG TÔI</h5>
+                        <ul id="bottom-social-media" class="font-size-large">
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-facebook"></i></a></li>
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-tiktok"></i></a></li>
+                            <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-youtube"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5>PHƯƠNG THỨC THANH TOÁN</h5>
+                        <ul class="nav">
+                            <li class="mx-1"><img src="../img/img/payment_1_img.webp" alt="Payment Method 1"></li>
+                            <li class="mx-1"><img src="../img/img/payment_2_img.webp" alt="Payment Method 2"></li>
+                            <li class="mx-1"><img src="../img/img/payment_3_img.webp" alt="Payment Method 3"></li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5>PHƯƠNG THỨC VẬN CHUYỂN</h5>
+                        <ul class="nav">
+                            <li class="mx-1"><img src="../img/img/shipment_1_img.webp" alt="Shipping Method 1"></li>
+                            <li class="mx-1"><img src="../img/img/shipment_2_img.webp" alt="Shipping Method 2"></li>
+                            <li class="mx-1"><img src="../img/img/shipment_3_img.webp" alt="Shipping Method 3"></li>
+                            <li class="mx-1"><img src="../img/img/shipment_4_img.webp" alt="Shipping Method 4"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>&copy; Bản quyền thuộc về HY HELMET.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Khung Chat -->
+    <!-- Khung Chat -->
+    <div id="chatWidget" style="position: fixed; bottom: 20px; right: 20px;">
+        <button onclick="toggleChat()"><i class="fas fa-comments"></i> Hỗ trợ</button>
+        <div id="chatModal" class="chat-modal" style="display: none;">
+            <div class="chat-header">
+                <span>Trò chuyện cùng hỗ trợ</span>
+                <button onclick="toggleChat()">✖️</button>
+            </div>
+            <div id="chatMessages" class="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Nhập tin nhắn..." onkeypress="if(event.key === 'Enter') sendMessage()">
+                <button onclick="sendMessage()">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript cho khung chat
+        function toggleChat() {
+            const chatModal = document.getElementById('chatModal');
+            chatModal.style.display = chatModal.style.display === 'none' || chatModal.style.display === '' ? 'block' : 'none';
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const userMessage = userInput.value.trim();
+            if (userMessage === '') return;
+
+            appendMessage('Bạn', userMessage);
+            userInput.value = '';
+
+            const response = getChatResponse(userMessage);
+            setTimeout(() => {
+                appendMessage('Bot', response);
+            }, 500);
+        }
+
+        function appendMessage(sender, message) {
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.innerHTML += `<div><strong>${sender}:</strong> ${message}</div>`;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getChatResponse(message) {
+            const lowerCaseMessage = message.toLowerCase();
+
+            if (lowerCaseMessage.includes('thông tin') || lowerCaseMessage.includes('chi tiết')) {
+                return 'Bạn cần tìm hiểu về sản phẩm nào cụ thể? Chúng tôi có thể cung cấp thông tin chi tiết về từng sản phẩm.';
+            } else if (lowerCaseMessage.includes('địa chỉ')) {
+                return 'Địa chỉ của cửa hàng chúng tôi là 123 Đường Phường 6, Quận Gò Vấp, TP. Hồ Chí Minh. Rất hân hạnh được chào đón bạn!';
+            } else if (lowerCaseMessage.includes('hotline') || lowerCaseMessage.includes('liên hệ')) {
+                return 'Bạn có thể gọi chúng tôi qua số hotline 0777476677 để được hỗ trợ nhanh nhất!';
+            } else if (lowerCaseMessage.includes('email')) {
+                return 'Email hỗ trợ của chúng tôi là Yenhao000@gmail.com. Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất!';
+            } else if (lowerCaseMessage.includes('khuyến mãi') || lowerCaseMessage.includes('giảm giá')) {
+                return 'Hiện tại, chúng tôi đang có chương trình giảm giá lên đến 20% cho các sản phẩm nổi bật. Hãy xem trang khuyến mãi của chúng tôi để biết thêm chi tiết!';
+            } else if (lowerCaseMessage.includes('sản phẩm')) {
+                return 'Chúng tôi có nhiều loại sản phẩm như nón bảo hiểm, phụ kiện. Bạn cần tìm loại sản phẩm cụ thể nào không?';
+            } else if (lowerCaseMessage.includes('đơn hàng') && lowerCaseMessage.includes('lỗi')) {
+                return 'Xin lỗi bạn vì sự bất tiện này! Để giải quyết nhanh, hãy cung cấp mã đơn hàng hoặc gọi cho chúng tôi qua hotline. Chúng tôi sẽ hỗ trợ hết sức.';
+            } else if (lowerCaseMessage.includes('giúp đỡ') || lowerCaseMessage.includes('hỗ trợ')) {
+                return 'Tôi có thể giúp bạn những gì? Bạn có thể hỏi về sản phẩm, thông tin đơn hàng, khuyến mãi, và nhiều hơn thế!';
+            } else if (lowerCaseMessage.includes('cảm ơn') || lowerCaseMessage.includes('thank')) {
+                return 'Không có chi! Rất vui khi được hỗ trợ bạn!';
+            } else if (lowerCaseMessage.includes('tạm biệt') || lowerCaseMessage.includes('bye')) {
+                return 'Chào tạm biệt! Rất vui khi được giúp đỡ bạn. Hẹn gặp lại!';
+            } else {
+                return 'Xin lỗi, tôi không chắc mình hiểu câu hỏi của bạn. Bạn có thể hỏi về thông tin sản phẩm, khuyến mãi hoặc hỗ trợ khác.';
+            }
+        }
+    </script>
+</body>
+
+</html>

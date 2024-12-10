@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán</title>
+    <link rel="icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/icontrangchu/logo.jpg" type="image/x-icon">
+
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- js -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/products.js"></script>
+</head>
+
+<body>
+    <div style="height: 100%;" class="container-fuild">
+        <div class="fixed">
+            <!--  -->
+            <div class="container-fluid py-2" id="top-header">
+                <div class="row align-items-center">
+                    <!-- Date Display -->
+                    <div class="col-md-3 text-center text-md-start my-1">
+                        <i class="bi bi-calendar-event"></i>
+                        <span id="dateNow"></span>
+                    </div>
+
+                    <!-- Contact Links -->
+                    <div class="col-md-9 d-flex justify-content-end">
+                        <ul id="top-contact" class="list-inline mb-0">
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/thanh-vien.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-people"></i> Thành viên
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangky.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-pencil-square"></i> Đăng ký
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/dangnhap.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-box-arrow-in-right"></i> Đăng nhập
+                                </a>
+                            </li>
+                            <li class="list-inline-item mx-2">
+                                <a href="../html/lienhe.html" class="text-black text-decoration-none">
+                                    <i class="bi bi-info-circle"></i> Liên hệ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- end top header -->
+
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-xl navbar-dark sticky-top p-2" id="navbar-menu">
+                <!-- Brand and Logo -->
+                <a class="navbar-brand" href="../html/index.html">
+                    <img src="../img/icontrangchu/logo.jpg" alt="logo" style="width: 50px; border-radius: 10px;">
+                </a>
+                <a href="../html/index.html" class="navbar-brand font-weight-bold"> HY HELMET</a>
+
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars text-dark"></i>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="nav-menu-link">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../html/index.html"><i class="bi bi-house-door-fill"></i> TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/gioithieu.html"><i class="bi bi-info-circle"></i> GIỚI THIỆU</a>
+                        </li>
+
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-list"></i> SẢN PHẨM <i class="bi bi-caret-down-fill"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbardrop">
+                                <li><a class="dropdown-item" href="../html/sanpham.html">Tất cả sản phẩm</a></li>
+                                <li><a class="dropdown-item" href="../html/non_34.html">Mũ bảo hiểm 3/4 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/non_fullface.html">Mũ bảo hiểm Fullface</a></li>
+                                <li><a class="dropdown-item" href="../html/non_12.html">Mũ bảo hiểm 1/2 đầu</a></li>
+                                <li><a class="dropdown-item" href="../html/nonxedap.html">Mũ bảo hiểm Xe Đạp</a></li>
+                                <li><a class="dropdown-item" href="../html/kids.html">Mũ bảo hiểm trẻ em</a></li>
+                                <li><a class="dropdown-item" href="../html/phukien.html">Phụ Kiện</a></li>
+                                <li><a class="dropdown-item" href="../html/kinh.html">Kính</a></li>
+                                <li><a class="dropdown-item" href="../html/gangtay.html">Găng Tay</a></li>
+                                <li><a class="dropdown-item" href="../html/khac.html">Khác</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/khuyenmai.html"><i class="bi bi-tag-fill"></i> KHUYẾN MÃI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/blog.html"><i class="bi bi-chat-dots-fill"></i> BÀI VIẾT</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../html/sitemap.html"><i class="bi bi-map-fill"></i> SITE MAP</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tìm kiếm và tài khoản/gio hàng ở góc phải -->
+                    <div class="d-flex align-items-center ms-3">
+                        <div class="search-container">
+                            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." />
+                            <button id="search-button" onclick="toggleSearchInput()">
+                                <img src="../img/icon/btsearch.png" alt="Search" />
+                            </button>
+                        </div>
+
+
+
+                        <div class="taiKhoan-gioHang ms-3">
+                            <a href="../html/thanhtoan.html" id="cart-icon" onmouseover="showCartItems()">
+                                <i style="font-size: 30px !important; color: white;" class="bi bi-cart-fill"></i>
+                                <span style="color: white;" id="cart-item-count" class="badge bg-warning rounded-circle">0</span>
+                            </a>
+                            <div id="cart-items-container" class="cart-items-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Navbar End -->
+
+        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../html/index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../html/thanhtoan.html" class="text-dark">Giỏ hàng</a></li>
+            </ol>
+        </nav>
+
+        <main class="container mt-5">
+            <h1 class="text-danger fw-bold">Giỏ hàng</h1>
+            <form>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Tạm tính</th>
+                            <th>Hủy</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items-table-body"></tbody>
+                    <tr>
+                        <td colspan="5">
+                            <button id="update-cart-btn" class="btn btn-danger">Cập nhật giỏ hàng</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <div class="row">
+                <div class="col-6">
+                    <h2>Cộng giỏ hàng</h2>
+                    <h3>Tổng tiền: <span class="total-amount"></span></h3>
+                </div>
+                <div class="col-6 text-end">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#paymentModal">Thanh Toán</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Payment Modal -->
+        <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="paymentModalLabel">Thông tin địa chỉ</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="paymentForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Họ và tên</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Số điện thoại</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Địa chỉ</label>
+                                <textarea class="form-control" id="address" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="payment-method" class="form-label">Phương thức thanh toán</label>
+                                <select class="form-select" id="payment-method" required>
+                                <option value="">Chọn phương thức</option>
+                                <option value="credit-card">Thẻ tín dụng</option>
+                                <option value="cash">Tiền mặt</option>
+                            </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" id="confirmPayment">Xác nhận thanh toán</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>LIÊN HỆ</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-geo-alt-fill"></i> Địa chỉ: Gò Vấp, TPHCM</li>
+                            <li><i class="bi bi-telephone-fill"></i> Số điện thoại: 0123456789</li>
+                            <li><i class="bi bi-envelope-fill"></i> Email: HYHelmet@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>CHÍNH SÁCH</h5>
+                        <ul>
+                            <li><a href="../html/index.html">Trang chủ</a></li>
+                            <li><a href="../html/gioithieu.html">Giới thiệu</a></li>
+                            <li><a href="../html/sanpham.html">Sản phẩm</a></li>
+                            <li><a href="../html/khuyenmai.html">Khuyến mãi</a></li>
+                            <li><a href="../html/blog.html">Bài viết</a></li>
+                            <li><a href="#">Site map</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                        <ul>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Điều khoản dịch vụ</a></li>
+                            <li><a href="#">Theo dõi đơn hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="cty-follow-us mb-3">
+                            <h5>TƯƠNG TÁC VỚI CHÚNG TÔI</h5>
+                            <ul id="bottom-social-media" class="font-size-large">
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-tiktok"></i></a></li>
+                                <li class="list-inline-item mx-2"><a href="#"><i class="bi bi-youtube"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>PHƯƠNG THỨC THANH TOÁN</h5>
+                            <ul class="nav">
+                                <li class="mx-1"><img src="../img/img/payment_1_img.webp" alt="Payment Method 1"></li>
+                                <li class="mx-1"><img src="../img/img/payment_2_img.webp" alt="Payment Method 2"></li>
+                                <li class="mx-1"><img src="../img/img/payment_3_img.webp" alt="Payment Method 3"></li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5>PHƯƠNG THỨC VẬN CHUYỂN</h5>
+                            <ul class="nav">
+                                <li class="mx-1"><img src="../img/img/shipment_1_img.webp" alt="Shipping Method 1"></li>
+                                <li class="mx-1"><img src="../img/img/shipment_2_img.webp" alt="Shipping Method 2"></li>
+                                <li class="mx-1"><img src="../img/img/shipment_3_img.webp" alt="Shipping Method 3"></li>
+                                <li class="mx-1"><img src="../img/img/shipment_4_img.webp" alt="Shipping Method 4"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p>&copy; Bản quyền thuộc về HY HELMET.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartItemsTableBody = document.getElementById('cart-items-table-body');
+                const totalAmountElement = document.querySelector('.total-amount');
+                const updateCartBtn = document.getElementById('update-cart-btn');
+
+                const totalAmount = displayCartItems(cart, cartItemsTableBody);
+                totalAmountElement.textContent = totalAmount.toLocaleString();
+
+                updateCartBtn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    updateCart(cart, cartItemsTableBody, totalAmountElement);
+                });
+
+                // Handle payment confirmation
+                document.getElementById('confirmPayment').addEventListener('click', function() {
+                    const name = document.getElementById('name').value;
+                    const phone = document.getElementById('phone').value;
+                    const address = document.getElementById('address').value;
+                    const paymentMethod = document.getElementById('payment-method').value;
+
+                    if (name && phone && address && paymentMethod) {
+                        // Here you can add code to process the payment and save the order
+                        alert(`Cảm ơn bạn, ${name}! Đơn hàng của bạn đã được xác nhận.`);
+                        // Reset the form
+                        document.getElementById('paymentForm').reset();
+                        // Close the modal
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('paymentModal'));
+                        modal.hide();
+                    } else {
+                        alert('Vui lòng điền đầy đủ thông tin!');
+                    }
+                });
+            });
+
+            function displayCartItems(cart, cartItemsTableBody) {
+                cartItemsTableBody.innerHTML = '';
+                let totalAmount = 0;
+
+                cart.forEach(item => {
+                    const productTotalNumber = parseFloat(item.price.replace(/,/g, '')) * item.quantity;
+                    totalAmount += productTotalNumber;
+
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                    <td>${item.title}</td>
+                    <td>${item.price}</td>
+                    <td><input type="number" id="quantity-${item.id}" value="${item.quantity}" min="1"></td>
+                    <td>${productTotalNumber.toLocaleString()}</td>
+                    <td><button onclick="removeFromCart(${item.id})" class="btn btn-danger btn-sm">Xóa</button></td>
+                `;
+                    cartItemsTableBody.appendChild(tr);
+                });
+
+                return totalAmount;
+            }
+
+            function updateCart(cart, cartItemsTableBody, totalAmountElement) {
+                let totalAmount = 0;
+
+                cart.forEach(item => {
+                    const quantityInput = document.getElementById(`quantity-${item.id}`);
+                    const quantity = parseInt(quantityInput.value);
+                    if (!isNaN(quantity) && quantity > 0) {
+                        item.quantity = quantity;
+                        const price = parseFloat(item.price.replace(/,/g, ''));
+                        totalAmount += price * item.quantity;
+                        const productTotalColumn = quantityInput.parentElement.nextElementSibling;
+                        productTotalColumn.textContent = (price * item.quantity).toLocaleString();
+                    }
+                });
+
+                totalAmountElement.textContent = totalAmount.toLocaleString();
+            }
+
+            function removeFromCart(id) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const updatedCart = cart.filter(item => item.id !== id);
+                localStorage.setItem('cart', JSON.stringify(updatedCart));
+                displayCartItems(updatedCart, document.getElementById('cart-items-table-body'));
+            }
+        </script>
+</body>
+
+</html>
